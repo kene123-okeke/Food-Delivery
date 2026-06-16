@@ -134,7 +134,7 @@ body{
 
 .order-box{
     background-color: #fff4da;
-    width: 50vw;
+    width: 52vw;
     padding: 20px;
     border-radius:15px;
     z-index: 5;
@@ -176,7 +176,7 @@ body{
     padding-top:10px;
     padding-bottom:10px;
     padding-left: 5px;
-    width: 55%;
+    width: 50%;
     border-radius: 10px;
     border:1px solid #fdbf2d
 }
@@ -186,7 +186,7 @@ body{
 }
 .input-field .menu-btn {
     float: right;
-    padding: 10px 10px;
+    padding: 10px;
     border-radius: 10px;
     background: rgb(255, 32, 32);
     border:none;
@@ -282,7 +282,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 200;
     text-align: center;
-    color: #777777;
+    color: #b6b6b6;
     margin-bottom:10%;
 }
 
@@ -292,6 +292,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     text-align: left;
+    padding: 3px;
 }
 
 .copyright{
