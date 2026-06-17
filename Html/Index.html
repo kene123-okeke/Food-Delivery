@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vivit,s Treats & Chops</title>
+        <title>Vivit's Treats & Chops</title>
         <link rel="stylesheet" href="../CSS/index.css">
         <link rel="stylesheet" href="../fontawesome-free-7.2.0-web/css/all.min.css">
         <link rel="webpage-icon" href="../Images/">
@@ -12,7 +12,7 @@
         <div class="nav-bar">
             <div class="logo"> 
                 <i class="fa fa-carrot"></i>
-                <h3><em>Vivit's</em> Treats & Chops</h3>
+                <h3><span>Vivit's</span> Treats & Chops</h3>
             </div>
             <!-- <div class="nav-bar-text">
                 <p>Deliver to</p>
@@ -31,9 +31,12 @@
         </div>
 
         <div class="body-block">
-            <h1> Are you hungry?</h1>
-            <p>Hot food made accessable and available to you with just a few clicks.</p>
-            <div class="order-box">
+            <div class="text-container">
+                <h1> Are you hungry?</h1>
+                <p>Hot food made accessable and available to you with just a few clicks.</p>
+                <a class="menu-btn" href="menu.html">Menu <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <!-- <div class="order-box">
                 <form class="mode-btn">
                     <button type="button"> <i class="fa fa-motorcycle"></i> Delivery</button>
                     <button type="button"> <i class="fa fa-bag-shopping"></i> Pickup</button>
@@ -43,31 +46,50 @@
                     <input type="search" placeholder="Enter your address">
                     <a class="menu-btn" href="menu.html"><i class="fa fa-search"></i>Browse Menu</a>
                 </form>
+            </div> -->
+        </div>
+     
+        <div class="Food-panel">
+            <div class="food-grid">
+                <div class="pic-1" title="Sharwama"></div>
+                <div class="pic-2" title="Chicken and Chips"></div>
+                <div class="pic-3" title="Fruit Juice"></label>></div>
+                <div class="pic-4" title="Suya"></div>
+                <div class="pic-5" title="Jollof Rice"></div>
+                <div class="pic-6" title="Rice and Banga Stew"></div>
+                <div class="pic-7" title="Fried Rice"></div>
+                <div class="pic-8" title="Rice and Tomato Stew"></div>
             </div>
         </div>
 
-        <div class="Food-panel">
-            <div class="food-grid">
-                <div><img src="../Images/sharwama1.jpeg" alt="Sharwama"></div>
-                <div><img src="../Images/chicken1.jpeg" alt="Chicken and Chips"></div>
-                <div><img src="../Images/juice1.jpeg" alt="Fruit Juice"></div>
-                <div><img src="../Images/sharwama2.jpeg" alt="Sharwama 2"></div>
-                <div><img src="../Images/chicken2.jpeg" alt="Chicken and chips 2"> </div>
-                <div><img src="../Images/juice2.jpeg" alt="Fruit Juice 2"></div>
-                <div><img src="../Images/Chicken.jpeg" alt="Chicken 3"></div>
-                <div><img src="../Images/sharwama.jpg" alt="Sharwama 3"></div>
-            </div>
+        <div class="manual">
+            <h2><span>How</span> it Works</h2>
+           
+            <p class="numbers">1</p>
+            <ul>
+                <li class="list-text"><h3><span>Pick</span> Your Meal <i class="fa fa-bread-slice"></i></h3>
+                <p>Browse the menus, check review and add to cart</p></li>
+            </ul>
+            <p class="numbers">2</p>
+            <ul>
+                <li class="list-text"><h3><span>Pay</span> Securely <i class="fa fa-money-check-dollar"></i>
+                </h3><p>Make your payment via transfer to restuarant or by cash on delivery</p></li>
+            </ul>
+            <p class="numbers">3</p>
+            <ul>
+                <li class="list-text"><h3><span>Delivery</span> Details <i class="fa fa-address-card"></i>
+                </h3><p>Add your location and your phone number for precise delivery. Customer information remains confidential</p></li>
+            </ul>
         </div>
 
         <div class="footer">
             <div class="footer-text">
-                <h2><em>Vivit's</em> Treats & Chops</h2>
+                <h2><span>Vivit's</span> Treats & Chops</h2>
                 <p>Hot meals, snacks and drinks delivered right to your doorstep so you dont leave the comfort of your home</p>
             </div>
             <div class="footer-links">
                 <div class="col">
                     <span>Explore</span>
-                    <a href="#">Resturants Near me</a>
                     <a href="#">Deals and Offers</a>
                     <a href="#">New </a>
                     <a href="#">Gift Cards</a>
@@ -82,7 +104,6 @@
                 <div class="col">
                     <span>Support</span>
                     <a href="#">Help centre</a>
-                    <a href="#">Track my order</a>
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of service</a>
                 </div>
