@@ -58,7 +58,7 @@ body{
     padding: 20px 10px;
     align-items: center;
     justify-content: space-between;
-    background-color: #000;
+    background-color: #231608;
     white-space: nowrap;
     z-index: 5;
 }
@@ -122,7 +122,7 @@ body{
     border: 2px solid #fdbf2d;
     padding: 10px 40px;
     border-radius: 10px;
-    background: #000;
+    background: #231608;
     color: #fdbf2d;
     cursor: pointer;
 }
@@ -196,7 +196,7 @@ body{
     content: "";
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to bottom,  transparent 60%, #000 100%);
+    background: linear-gradient(to bottom,  transparent 60%, #231608 100%);
     z-index: -1;
 }
 
@@ -227,7 +227,7 @@ body{
 }
  .body-block .menu-btn{
     float: right;
-    background: #000;
+    background: #231608;
     color: #fdbf2d;
     border-radius: 10px;
     padding: 12px 40px;
@@ -318,7 +318,7 @@ body{
 /* The end of the head block with yellow background */
 
 .Food-panel{
-    background: #000;
+    background: #231608;
     padding-top: 30px;
     width:100%;
 }
@@ -343,7 +343,7 @@ body{
     content: "";
     position: absolute;
     top: 0; right: 0; left: 0; bottom:0;
-    background: radial-gradient(transparent 10%, #000 100%);
+    background: radial-gradient(transparent 10%, #231608 100%);
     z-index: -1;
 }
 .food-grid .pic-1{
@@ -528,7 +528,7 @@ body{
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(#000 3%, transparent 50%, #000 100%);
+    background: linear-gradient(#231608 3%, transparent 50%, #231608 100%);
     z-index:-1;
 }
 
@@ -588,7 +588,7 @@ body{
 }
 .footer{
     position: relative;
-    background: #000;
+    background: #121212;
     width: 100%;
     padding-top: 10vh;
     padding-left: 5%;
