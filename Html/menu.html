@@ -3,31 +3,149 @@
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Menu</title>
-        <link rel="stylesheet" href="../CSS/index.css">
+        <link rel="stylesheet" href="../CSS/menu.css">
         <link rel="stylesheet" href="../fontawesome-free-7.2.0-web/css/all.min.css">
     </head>
     <body>
         <div class="nav-bar">
-            <div class="logo"> 
-                <i class="fa fa-kitchen-set"></i>
-                <h3><em>Vivit's</em> Treats & Chops</h3>
+            <div class="logo">                
+                <h3><i class="fa fa-plate-wheat"></i><span>Vivit's</span> Treats & Chops</h3>
             </div>
-            <div class="nav-bar-text">
-                <p>Menu</p>
-            </div> 
+           
             <div class="user-btn">
                 <a href="login.html">Sign Up</a>
-                <form class="search-bar">
-                    <button type="button">Cart</button>
+                <form class="cart">
+                    <button type="button"><i class="fa fa-shopping-cart"></i> Cart</button>
                 </form>
             </div>
         </div>
+        <div>
+            <h1><span>Vivit's</span> Treats & Chops Menu</h1>
+            <p>...Every Bite comes with a special feeling...</p>
+        </div>
         <div class="category">
             <ul>
-                <li>Meals</li>
-                <li>Sharwama</li>
-                <li>Drinks</li>
+                <li><a href="#meals">Meals</a></li>
+                <li><a href="#sharwama">Sharwama and grills</a></li>
+                <li><a href="#drinks">Drinks</a></li>
             </ul>
+        </div>
+        <div class="container">
+            <div class="sharwama" id="sharwama">
+                <h2>Sharwama</h2>
+                <p>Get your Crispy & Creamy Sharwama for as low as 2K</p>
+                <div class="single-size">
+                <h3>Single Size</h3>
+                    <form>
+                        <button type="button">2500</button>
+                        <button type="button">2000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div>
+                <div class="normal-size">
+                    <h3>Normal Size</h3>
+                    <form>
+                        <button type="button">3500</button>
+                        <button type="button">3000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div>
+                <div class="large-size">
+                    <h3>Large Size</h3>
+                    <form>
+                        <button type="button">4500</button>
+                        <button type="button">4000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div> 
+                <div class="jumbo-size">
+                    <h3>Jumbo Size</h3>
+                    <form>
+                        <button type="button">6000</button>
+                        <button type="button">5000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="chicken-chips">
+                <h2>Chicken and Chips</h2>
+                <p>Get your Crunchy Chips, Crispy Chicken & Creamy Sauce for as low as 2K</p>
+            <div class="single-size">
+                <h3>Single Size</h3>
+                    <form>
+                        <button type="button">2500</button>
+                        <button type="button">2000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div>
+                <div class="normal-size">
+                    <h3>Normal Size</h3>
+                    <form>
+                        <button type="button">3500</button>
+                        <button type="button">3000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div>
+                <div class="large-size">
+                    <h3>Large Size</h3>
+                    <form>
+                        <button type="button">4500</button>
+                        <button type="button">4000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div> 
+                <div class="jumbo-size">
+                    <h3>Jumbo Size</h3>
+                    <form>
+                        <button type="button">5000</button>
+                        <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="Fruit-juice" id="drinks">
+                <h2>Fruit Juice</h2>
+                <p>Get your most natural and cold fruit juice for as low as 1K</p>
+                <div class="single-fruit">
+                    <h3>Single Fruit</h3>
+                        <form>
+                            <button type="button">1000</button>
+                            <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                        </form>
+                    </div>
+                    <div class="mixed-fruit">
+                        <h3>Mixed-Fruit</h3>
+                        <form>
+                            <button type="button">1500</button>
+                            <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                        </form>
+                    </div>
+                    <div class="sweetened-fruit">
+                        <h3>Sweetened Fruit</h3>
+                        <form>
+                            <button type="button">1500</button>
+                            <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                        </form>
+                    </div> 
+                    <div class="mixed-sweetened">
+                        <h3>Mixed & Sweetened</h3>
+                        <form>
+                            <button type="button">2000</button>
+                            <button type="button"> Add to Cart <i class="fa fa-plus"></i></button>
+                        </form>
+                    </div>
+            </div>
+
+            <div class="meal" id="meals">
+                <h2>Meals</h2>
+                <div class="Jollof">
+                    <h3>Jollof-Rice</h3>
+                    <form>
+                        <p>With Meats</p>
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 </html>
