@@ -7,6 +7,7 @@
 
 body{
     position: static;
+    background: #fdbf2d;
     width: 100%;
 }
 
@@ -58,9 +59,10 @@ body{
     padding: 20px 10px;
     align-items: center;
     justify-content: space-between;
-    background-color: #231608;
+    background-color: #705014;
     white-space: nowrap;
     z-index: 5;
+    box-shadow: 0 8px 30px #705014d8;
 }
 
 .logo{
@@ -79,18 +81,6 @@ body{
     color: #fdbf2d;
 }
 
-/* .nav-bar-text{
-    margin-left: 5%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    display: flex;
-    gap: 5px;
-    color: #f2f2f4;
-}
-
-.nav-bar-text i{
-    color: #fdbf2d;
-} */
 
 .user-btn{
     margin-left: 10%;
@@ -122,7 +112,7 @@ body{
     border: 2px solid #fdbf2d;
     padding: 10px 40px;
     border-radius: 10px;
-    background: #231608;
+    background: #231608cb;
     color: #fdbf2d;
     cursor: pointer;
 }
@@ -196,38 +186,40 @@ body{
     content: "";
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to bottom,  transparent 60%, #231608 100%);
+    background: linear-gradient(to bottom,  transparent 60%, #705014 100%);
     z-index: -1;
 }
 
 .text-container{
-    width: 55vw;
+    width: 90vw;
+    margin: auto;
 }
 
-.body-block h1{
+.body-block .text h1{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 65px;
+    font-size: 3.5rem;
     font-weight: 700;
     color:#f2f2f4;
-    margin-left: 10%;
+    margin-left: 7%;
     margin-bottom: 1vh;
 }
-.body-block h2{
+.body-block .text h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
-    margin-left: 10%;
+    margin-left: 7%;
 }
 
-.body-block p{
+.body-block .text p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     color: #000;
     margin-bottom: 15vh;
-    margin-left: 10%;
+    margin-left: 7%;
 }
  .body-block .menu-btn{
-    float: right;
-    background: #231608;
+    float: left;
+    margin-left: 50vw ;
+    background: #705014;
     color: #fdbf2d;
     border-radius: 10px;
     padding: 12px 40px;
@@ -237,6 +229,7 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: 1.1em;
+    box-shadow: 0px 0px 20px #121212;
  }
 
  .body-block .menu-btn:hover{
@@ -245,80 +238,11 @@ body{
     border: 2px solid #000;
  }
 
-/* .order-box{
-    background-color: #fff4da;
-    width: 52vw;
-    padding: 20px;
-    border-radius:15px;
-    z-index: 5;
-    margin-left: 10%;
-}
 
-.mode-btn{
-    margin-bottom: 50px;
-    margin-left: 20px;
-    width: 100%;
-}
-
-.mode-btn button{
-    padding: 5px 30px;
-    border: 1px solid #fdbf2d;
-    background: #fff4d9;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 550;
-    color: #2e2e2e;
-    white-space: nowrap;
-    width: 140px;
-}
-
-.mode-btn button:hover{
-    background: #fdbf2d;
-}
-
-.mode-btn button:focus{
-    background: #fdce60;
-}
-
-.input-field .fa-location-dot{
-    color:rgb(250, 75, 75);
-}
-
-.input-field input{
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left: 5px;
-    width: 50%;
-    border-radius: 10px;
-    border:1px solid #fdbf2d
-}
-
-.input-field input:hover{
-    transform: scale(1.05);
-}
-.input-field .menu-btn {
-    float: right;
-    padding: 10px;
-    border-radius: 10px;
-    background: rgb(255, 32, 32);
-    border:none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-family: 500;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #000;
-}
-
-.input-field .menu-btn:hover{
-    background: rgb(204, 16, 16);
-    color:#f2f2f4
-} */
 /* The end of the head block with yellow background */
 
 .Food-panel{
-    background: #231608;
+    background: #705014;
     padding-top: 30px;
     width:100%;
 }
@@ -337,13 +261,16 @@ body{
     height: 45vh;
     width: 20vw;
     margin:10px auto;
+    transition: ease-in-out 1.5s;
+    box-shadow: 0px 0px 30px #121212;
 }
+
 
 .food-grid div:hover::before{
     content: "";
     position: absolute;
-    top: 0; right: 0; left: 0; bottom:0;
-    background: radial-gradient(transparent 10%, #231608 100%);
+    top: 0; right: 0; left: 0; bottom:0;    
+    background: radial-gradient(transparent 25%, #231608 100%);
     z-index: -1;
 }
 .food-grid .pic-1{
@@ -528,7 +455,7 @@ body{
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(#231608 3%, transparent 50%, #231608 100%);
+    background: linear-gradient(#705014 3%, transparent 50%, #231608 100%);
     z-index:-1;
 }
 
@@ -562,7 +489,7 @@ body{
 .manual .list-text{
     list-style:none;
     margin-bottom: 40px;
-    background: #0000007e;
+    background: #2b1a085e;
     padding: 20px;
     color: #f2f2f4;
     border-radius: 5px;
@@ -588,7 +515,7 @@ body{
 }
 .footer{
     position: relative;
-    background: #121212;
+    background: #705014;
     width: 100%;
     padding-top: 10vh;
     padding-left: 5%;
@@ -698,7 +625,8 @@ body{
     }
 
     .user-btn{
-        justify-content: center;
+        margin: 0px;
+        justify-content: space-evenly;
         width: 100vw;
         gap: 10px;
     }
