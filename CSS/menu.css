@@ -11,6 +11,7 @@ body{
     overflow-x: hidden;
 }
 .side-img{
+    position: relative;
     background-color: #1a1a1a;
     background-image: url("../Images/side-pane.jpg");
     background-repeat: no-repeat;
@@ -23,6 +24,14 @@ body{
     width:30%;
     height: 100vh;
     color: #fff;
+
+}
+
+.side-img::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(transparent 50%, #221202 100%);
 }
 .main-block{
     float: right;
@@ -158,7 +167,7 @@ body{
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 15px #1a1a1a;
-    z-index: 999;
+    z-index: 49;
     transition: opacity .2s ease;
     /* transform: translateY(-30px); */
 }
@@ -179,6 +188,7 @@ body{
     width: 100%;
     z-index: 5;
     overflow-x: auto;
+    box-shadow: 0 5px 10px #1a1a1a;
 }
 
 .category::-webkit-scrollbar{
@@ -261,23 +271,26 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3vh auto;
+    margin: 5vh auto;
+    
 }
 
 .food-img img{
     width: 100%;
     border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 0 20px #1a1a1a;
 }
 
 .types{
     display: flex;
     align-content: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 5vh;
 }
 
 .sizes{
-    padding: 1.5vh 3vw;
+    padding: 1.5vh 2.5vw;
     cursor: pointer;
     border: none;
     border-radius: 25px;
@@ -289,9 +302,15 @@ body{
     transition: ease-in-out 0.5s;
 }
 
-.sizes:hover, .sizes:focus-within{
+.sizes:hover{
+    transform: scale(1.02);
     background: var(--red, #990000);
     color: #ffb870;
+}
+
+.sizes.active{
+    background: var(--red, #990000);
+    color: var(--cream, #ffb870);
 }
 .bottom-row{
     display: flex;
@@ -314,7 +333,7 @@ body{
     cursor: pointer;
 }
 
-.price-btn:hover{
+.prices button.price-btn:hover{
     color: var(--cream, #ffb870);
     background: var(--red, #990000);
     transform: scale(1.1);
@@ -359,6 +378,230 @@ body{
     color: var(--cream, #ffb870);
     background: var(--red, #990000);
 }
+
+#sharwama .header{
+    background-image: url("../Images/sharwama.jpg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#chicken .header{
+    background-image: url("../Images/chicken2.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#pizza .header{
+    background-image: url("../Images/pizza.jpg");
+    background-size: cover;
+    background-position: right;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#drinks .header{
+     background-image: url("../Images/juice2.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+#rice .header{
+    background-image: url("../Images/fried-rice.jpeg");
+    background-size: cover;
+    background-position: right;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#swallow .header{
+    background-image: url("../Images/swallow.jpeg");
+    background-size: cover;
+    background-position: right;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 340px;
+  background: #ffb870;
+  padding: 0;
+  box-shadow: -6px 0 20px rgba(0,0,0,.25);
+  transform: translateX(100%);   /* hidden, pushed off-screen to the right */
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.panel-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #900;
+    padding: 2vw;
+}
+.panel-head div span{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+.panel-head h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.7rem;
+    color: var(--cream, #ffb870);
+    text-transform: uppercase;
+}
+
+.side-panel #order-custom{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: #d3d3d3;
+    background: #990000;
+    border-bottom: 2px solid #990000;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+}
+
+#closePanel{
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    background: none;
+    color: #ffb870;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#closePanel:hover{
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #1a1a1a;
+}
+
+#panelAdditions{
+    margin:3vh 2vw;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    padding-bottom: 2vw;
+    color: var(--red-dark, #990000);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-bottom: 2px solid;
+}
+
+#panelImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow:0 0 8px ;
+}
+
+.add-item{
+    display: flex;
+    align-items: center;
+    padding: 1vw;
+    justify-content: space-between;
+}
+.add-item label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.add-item input[type="checkbox"]{
+    accent-color: #990000;
+    width: 15px;
+    height: 15px;
+}
+.add-item span{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--green, #398a03);
+}
+
+.base{
+    background: #990000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2vh 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.base div .total{
+    margin:2vh 1vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--cream, #ffb870);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.base div .total span{
+    color: var(--green, #55c00d);
+}
+.base div .confirm-btn{
+    padding: 1vh 90px;
+    white-space: nowrap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: var(--cream, #ffb870);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #1a1a1a;
+    color:var(--red, #990000);
+    margin: 0 auto;
+    transition: ease-in-out 0.2s;
+}
+
+.base div .confirm-btn:hover{
+    background: var(--red, #990000);
+    color: var(--cream, #ffb870);
+}
+
+.side-panel.open {
+  transform: translateX(0);       /* slides into view */
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .footer{
     position: relative;
     background-color: #1a1a1a;

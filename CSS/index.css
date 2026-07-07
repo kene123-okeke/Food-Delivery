@@ -60,7 +60,7 @@ body{
     justify-content: space-between;
     background-color: #990000;
     white-space: nowrap;
-    z-index: 5;
+    z-index: 2;
     box-shadow: 0 8px 30px #2b2b2b;
 }
 
@@ -136,27 +136,27 @@ body{
     background-size: cover;
     background-position: right;
     width: 100%;
-    padding: 10vh 0px;
+    padding: 110px 0px;
     z-index: 1;
 }
 
 .hover-img #pizza{
     position: absolute;
     right: 45px;
-    bottom: 350px;
+    top: 325px;
     border-radius: 50%;
-    opacity: 1;
-    animation: float 5s ease-in-out infinite;
+    opacity: 0.5;
+    animation: float 3s ease-in-out infinite;
     z-index: -1;
 }
 
 .hover-img #chicken{
     position: absolute;
     right: 210px;
-    bottom: 175px;
+    top: 175px;
     border-radius: 50%;
     opacity: 0.5;
-    animation: float 5.7s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
     z-index: -1;
 }
 
@@ -164,10 +164,10 @@ body{
     position: absolute;
     right: 20px;
     /* top: 100px; */
-    bottom: 150px;
+    top: 150px;
     border-radius: 50%;
     opacity: 0.5;
-    animation: float 6.4s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
     z-index: -1;
 }
 
@@ -175,10 +175,10 @@ body{
 .hover-img #rice{
     position: absolute;
     right: 45px;
-    bottom: 4px;
+    top: 25px;
     border-radius: 50%;
     opacity: 0.5;
-    animation: float 6.4s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
     z-index: -1;
 }
 
@@ -222,13 +222,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     margin-left: 7%;
+    width: 60vw;
 }
 
 .body-block .text p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
+    width: 70vw;
     color: #000;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
     margin-left: 7%;
 }
  .body-block .menu-btn{
