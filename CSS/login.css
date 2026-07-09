@@ -1,0 +1,311 @@
+:root{
+    --red:#990000;
+    --dark-red:#6b0000;
+    --placeholder:#550000;
+    --cream:#ffb870;
+    --btn-hover-cream:#da9c5f;
+    --btn-hover-red:#bb0000;
+    --shadow:#1a1a1a;
+    --background-overlay:#2b2b2b;
+    --light-shadow:#e5e5e5;
+    --text-color:#0a0a0a;
+    --green:#55c00d;
+    --font1: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+.side-pane{
+    display: flex;
+    flex:0.2;
+    width: 50vw;
+    height: 100vh;
+}
+
+.main-block{
+    position: relative;
+    display: flex;
+    flex: 2;
+    height: 100vh;
+    background-color: var(--shadow);
+    background-image:url("../Images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.back-home{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 999;
+    background: var(--red);
+    padding: 1vw;
+    border-radius: 0px 10px 10px;
+}
+
+.back-home a{
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--font1);
+
+}
+
+.login-card{
+    margin: auto;
+    background: #ffb7705e;
+    min-width: 40vw;
+    max-width: fit-content;
+    height:80vh;
+    padding: 4vh 2vw;
+    font-family: var(--font1);
+    border-radius: 20px;
+    border:1px solid var(--red);
+    aspect-ratio: 100%;
+    transition: ease-in-out 0.4s;
+    overflow-y: auto;
+}
+
+.login-card::-webkit-scrollbar{
+    display: none;
+}
+
+.login-card h1{
+    color: var(--red, #990000);
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.login-card p{
+    color: var(--text-color, #0a0a0a);
+    text-align: center;
+    margin-bottom: 1.5vh;
+}
+
+.login-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background:transparent;
+    padding-top: 8px;
+    padding-bottom: 3px; ;
+    border-radius: 25px;
+    margin-bottom: 1vh;
+}
+
+.login-switch button{
+    width: 49%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--red, #990000);
+    background: var(--cream, #ffb870);
+    transition: ease-in-out 0.5s;
+    box-shadow:0 0 5px var(--shadow);
+}
+
+.login-switch button.active{
+    color: var(--cream);
+    background: var(--red, #990000);
+    transform: translateY(-5px);
+}
+.login-switch button:hover{
+    color: var(--btn-hover-red);
+    background: var(--btn-hover-cream);
+    /* transform: translateY(-1px); */
+    /* border: 1px solid var(--cream); */
+}
+
+.sign-in-with{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 2vh;
+}
+
+.sign-in-with button{
+    white-space: nowrap;
+    padding: 1.5vh 1vw;
+    width: 45%;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    color: var(--red);
+    background: var(--cream);
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    box-shadow: 0 0 10px var(--shadow);
+}
+
+.sign-in-with button:hover{
+    color: var(--cream);
+    background: var(--red);
+}
+
+.login-card span{
+    text-align: center;
+}
+
+.input-form{
+    display: flex;
+    flex-direction: column;
+}
+.typing{
+    margin-bottom: 2vh;
+}
+.entry{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+}
+
+.entry label{
+    margin-bottom: 5px;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.entry div input{
+    margin-bottom: 8px;
+    border-radius: 10px;
+    height: 43px;
+    width: 100%;
+    font-size: 1rem;
+    padding-left: 3.5ch;
+    padding-right: 3.7ch;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid var(--red);
+    background: transparent;
+    color: var(--red);
+}
+
+.entry div input:hover{
+    border: 2px solid var(--dark-red);
+}
+
+.entry div input::placeholder{
+    color: var(--placeholder);
+}
+.entry div input:focus{
+    background: var(--cream);
+    border-color: var(--red);
+    outline: none;
+    box-shadow: 0 0 5px var(--shadow);
+}
+.email-entry{
+    position:relative;
+    align-items: center;
+}
+
+.email-entry i{
+    position: absolute;
+    top: 14px;
+    left: 9px;
+    color: var(--green);
+}
+
+.password-entry{
+    position: relative;
+}
+
+.fa-key{
+    position: absolute;
+    top: 14px;
+    left: 9px;
+    color: var(--green);
+}
+
+.eye-btn{
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--dark-red);
+    transition:ease-in-out 0.1s;
+}
+
+.eye-btn:hover{
+    transform: scale(1.1);
+}
+
+.signedin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+    padding: 0 15px;
+    margin-bottom: 2vh;
+}
+
+.remember-me input[type="checkbox"]{
+    accent-color: var(--red);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.remember-me label{
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.signedin a{
+    color:var(--red);
+    transition: ease-in-out 0.3s;
+}
+
+.signedin a:hover{
+    font-weight: 500;
+    color: var(--dark-red, #6b0000);
+}
+.signin-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin-btn button{
+    width: 100%;
+    padding: 2vh 1vw;
+    border-radius: 10px;
+    background: var(--red);
+    color: var(--cream);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px var(--shadow);
+}
+
+.signin-btn button:hover{
+    filter: thermal();
+}
+.sign-up{
+    display: none;
+}
+@media(max-width:750px){
+    .side-pane{
+        display: none;
+    }
+}
