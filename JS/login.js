@@ -41,3 +41,54 @@ passWordShow.forEach(btn => {
         icon.classList.toggle('fa-eye-slash', ishidden);
     })
 })
+
+function showError(inputE1, errorE1, message){
+    inputE1.classList.add('invalid');
+    inputE1.classList.remove('valid');
+    errorE1.querySelector('.error-text').textContent = message;
+    errorE1.classList.add('show');
+}
+function clearError(inputE1, errorE1){
+    inputE1.classList.remove('invalid');
+    errorE1.textContent = "";
+    errorE1.classList.remove('show');
+}
+
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+
+emailInput.addEventListener('input', () => {
+    const value = emailInput.value.trim();
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+    if(value.length === 0){
+        clearError(emailInput, emailError);
+    }else if(!isValid){
+        showError(emailInput, emailError, 'Enter a Valid Email Address');
+    }else {
+        clearError(emailInput, emailError);
+        emailInput.classList.add('valid');
+    }
+});
+
+const loginForm = document.getElementById('loginForm');
+const loginError = document.getElementById('loginError');
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const enteredEmail = loginForm.querySelector('input[type="email"]').value.trim();
+    const enteredPassword = loginForm.querySelector('input[type="password"]').value;
+
+
+    const correctEmail = "test@vivits.com";
+    const correctpassword = "password123";
+
+    if (enteredEmail === correctEmail && enteredPassword === correctpassword){
+        loginError.classList.remove('show');
+        window.location.href = loginForm.action;
+
+    }else{
+        loginError.classList.add('show');
+    }
+})

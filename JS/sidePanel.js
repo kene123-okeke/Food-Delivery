@@ -1,6 +1,7 @@
 const panel = document.getElementById('sidePanel');
 const overlay = document.getElementById('overlay');
-
+const cartBtn = document.getElementById('cart-btn');
+const shopBtn = document.getElementById('shop-cart');
 
 document.querySelectorAll('.food-card').forEach(card=>{
   const variants = JSON.parse(card.dataset.variants);
@@ -109,39 +110,37 @@ function closePanel() {
   overlay.classList.remove('open');
 }
 
+const switchMethod = document.querySelectorAll('.del-types');
+const deliveryGroup = document.getElementById('deliverygroup');
+const reserveGroup = document.getElementById('reservationgroup');
 
+document.querySelectorAll('.cart').forEach(btn => {
+  btn.addEventListener('click', () => {
+    cartBtn.classList.add('open');
+    overlay.classList.add('open');
 
-// const editButtons = document.querySelectorAll('.customize');
+    switchMethod.forEach(btn =>{
+    btn.addEventListener('click', () => {
+        switchMethod.forEach(b => b.classList.remove('current'));
 
+        btn.classList.add('current');
 
-// editButtons.forEach(btn => {
-//   btn.addEventListener('click', () => {
-//     // Read the data-* attributes off the button that was clicked
-//     const name = btn.dataset.name;
-//     const img = btn.dataset.img;
-//     const price = btn.dataset.price;
+        if(btn.dataset.target === 'delivery'){
+            deliveryGroup.style.display = "block";
+            reserveGroup.style.display ="none";
+        }
+        else{
+            deliveryGroup.style.display = "none";
+            reserveGroup.style.display = "block";
+        }
+     });
+    });
+  })
+})
 
-//     // Push that info into the panel's content
-//     document.getElementById('panelName').textContent = currentType;
-//     document.getElementById('panelImg').src = data.img;
-
-//     // const additions = JSON.parse(btn.dataset.additions);
-//     const container = document.getElementById('panelAdditions');
-//     container.innerHTML = ''; // clear old items first
-
-//     additions.forEach(item => {
-//       container.innerHTML += `
-//         <div class="add-item">
-//             <label><input type="checkbox"> ${item.label}</label>
-//             <span>+₦${item.price}</span>
-//         </div>
-//       `;
-//     });
-
-//     // Open the panel
-//     panel.classList.add('open');
-//     overlay.classList.add('open');
-//   });
-// });
-
-
+function closeCartPanel(){
+  cartBtn.classList.remove('open');
+  overlay.classList.remove('open');
+}
+document.getElementById('closecart').addEventListener('click', closeCartPanel);
+overlay.addEventListener('click', closeCartPanel);

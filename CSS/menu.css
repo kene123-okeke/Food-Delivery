@@ -1,11 +1,25 @@
 :root{
+    --red:#990000;
+    --dark-red:#6b0000;
+    --placeholder:#550000;
+    --cream:#ffb870;
+    --btn-hover-cream:#da9c5f;
+    --btn-hover-red:#bb0000;
+    --shadow:#1a1a1a;
+    --background-overlay:#2b2b2b;
+    --light-shadow:#e5e5e5;
+    --text-color:#0a0a0a;
+    --green:#55c00d;
+    --font1: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
+
 *{
     margin:0px;
     padding: 0%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: var(--font1);
 }
 body{
     position: static;
@@ -58,8 +72,8 @@ body{
 }
 
 .logo{
-    color: #ffb870;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cream, #ffb870);
+    font-family: var(--font1);
     font-size: 1.35rem;
     font-weight:700;
     float: left;
@@ -72,10 +86,10 @@ body{
     border: none;
     margin:1.1vh  ;
     text-decoration: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font1);
     font-size: 1rem;
     border-radius: 10px;
-    color: #ffb870;
+    color: var(--cream, #ffb870);
     background: none;
     white-space: nowrap;
     transition: ease-in-out 0.2s;
@@ -87,27 +101,27 @@ body{
 
 .cart button{
     padding: 1vh 2vw;
-    background: #990000;
-    border: 2px solid #ffb870;
+    background: var(--red);
+    border: 2px solid var(--cream);
     border-radius: 10px;
-    color: #ffb870;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cream);
+    font-family: var(--font1);
     font-size: 1rem;
     font-weight: 500;
     white-space: nowrap;
     transition: ease-in-out 0.2s;
     cursor: pointer;
-    box-shadow: 0 0 10px #2b2b2b;
+    box-shadow: 0 0 10px var(--shadow);
 }
 
 .cart button:hover{
-    background: #ffb870;
-    color: #900;
+    background: var(--cream);
+    color: var(--red);
 }
 
 .opening-block{
     position: relative;
-    background-color: #2b2b2b;
+    background-color: var(--background-overlay);
     background-image: url("../Images/side-pane.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -118,36 +132,20 @@ body{
     justify-content: space-between;
     z-index: -1;
 }
-/* 
-.opening-block::after{
-    content: "";
-    position: absolute;
-    top: 0; right: 0; left: 0; bottom: 0;
-    background: linear-gradient(to bottom, transparent 80%, #2b1a085e 100%);
-    z-index: 1;
-} */
-/* .opening-block img{
-    position: absolute;
-    right: -3vw; top:0;
-    opacity: 0.9;;
-    border-radius: 5px;
-    background-blend-mode: difference;
-    z-index: -1;
-} */
 
 .opening-block h1{
-    color: #990000;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--red);
+    font-family: var(--font1);
     font-weight: 700;
     font-size: 2.4rem;
 }
 .opening-block h1 i{
-    color:#55c00d;
+    color:var(--green);
 }
 
 .opening-block p{
-    color: #ffb870;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cream);
+    font-family: var(--font1);
     font-weight: 700;
     font-size: 1.4rem;
     z-index: 2;
@@ -202,12 +200,12 @@ body{
     text-decoration: none;
     padding:1vh 1vw;
     margin: 0 1vw;
-    background: #990000;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: var(--red);
+    font-family:var(--font1);
     font-weight: 500;
     font-size:1.1rem;
-    color: #ffb870;
-    border: 2px solid #ffb870;
+    color: var(--cream);
+    border: 2px solid var(--cream);
     border-radius:5px;
     white-space: nowrap;
     box-shadow: 0 0 5px;
@@ -215,20 +213,20 @@ body{
 }
 
 .category a:hover{
-    background: #ffb870;
-    box-shadow: 0 0 20px #2b2b2b;
-    color: #990000;
+    background: var(--cream);
+    box-shadow: 0 0 20px var(--shadow);
+    color: var(--red);
     transform: translateY(-5px);
 }
 .category a:focus-within{
-    background: #ffb870;
-    box-shadow: 0 0 20px #2b2b2b;
-    color: #990000;
+    background: var(--cream);
+    box-shadow: 0 0 20px var(--shadow);
+    color: var(--red);
     transform: translateY(-5px);
 }
 .container{
-    background: #ffb870;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: var(--cream);
+    font-family: var(--font1);
     padding: 0.1vh 2vw;
 
 }
@@ -261,7 +259,7 @@ body{
 }
 
 .header{
-    color: #ffb870;
+    color: var(--cream);
     font-size: 2rem;
     text-transform: uppercase;
 }
@@ -302,7 +300,7 @@ body{
     background: var(--cream, #ffb870);
     font-size: 1rem;
     font-weight: 550;
-    color: #990000;
+    color: var(--red, #990000);
     box-shadow: 0 0 5px #1a1a1a;
     transition: ease-in-out 0.5s;
 }
@@ -310,12 +308,13 @@ body{
 .sizes:hover{
     transform: scale(1.02);
     background: var(--red, #990000);
-    color: #ffb870;
+    color: var(--cream);
 }
 
 .sizes.active, .prices.selected{
     background: var(--red, #990000);
     color: var(--cream, #ffb870);
+    transform: translateY(-10px);
 }
 
 .bottom-row{
@@ -325,6 +324,7 @@ body{
 }
 .prices{
     display: flex;
+    flex-wrap: wrap;
     gap: 3vw;
 }
 .price-btn{
@@ -332,7 +332,7 @@ body{
     border: none;
     border-radius:25px;
     font-size: 1.1rem;
-    color: #990000;
+    color: var(--red, #990000);
     background: var(--cream, #ffb870);
     box-shadow: 0 0 10px #1a1a1a;
     transition: ease-in-out 0.5s;
@@ -347,6 +347,7 @@ body{
 .customise-cart{
     display: flex;
     gap: 3vw;
+    align-items: center;
 }
 
 .customize{
@@ -355,7 +356,7 @@ body{
     border-radius:50%;
     font-size: 1.1rem;
     font-weight:200;
-    color: #990000;
+    color: var(--red, #990000);
     background: var(--cream, #ffb870);
     box-shadow: 0 0 10px #1a1a1a;
     transition: ease-in-out 0.5s;
@@ -368,12 +369,13 @@ body{
 }
 
 .add-to-cart{
-    padding: 0.5vh 2vw;
+    padding: 1.5vh 2vw;
+    white-space: nowrap;
     border: none;
     border-radius:25px;
     font-size: 1rem;
     font-weight: 600;
-    color: #990000;
+    color: var(--red, #990000);
     background: var(--cream, #ffb870);
     box-shadow: 0 0 10px #1a1a1a;
     transition: ease-in-out 0.5s;
@@ -437,13 +439,211 @@ body{
     -webkit-background-clip: text;
     background-clip: text;
 }
+
+.cart-btn{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    min-width: 350px;
+    width: 40vw;
+    background: var(--background-overlay, #1a1a1a);
+    background-image: url("../Images/IMG-20260701-WA1473.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    padding: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    z-index: 101;
+}
+
+.cart-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--red, #990000);
+    font-family: var(--font1, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif);
+    
+}
+
+.cart-btn h2{
+    color: var(--cream, #ffb870);
+    margin-left: 2vw;
+}
+
+.cart-btn h2 span{
+    color: var(--green);
+}
+#closecart{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cream, #ffb870);
+    background: none;
+    border: none;
+    cursor:pointer;
+    text-shadow: 0 0 5px var(--shadow);
+    transition: ease-in-out .3s;
+}
+
+#closecart:hover{
+    transform: scale(1.2);
+}
+
+.cart-additions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw;
+    overflow-y: auto;
+}
+
+.method{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--red);
+    padding: 25px;
+
+}
+
+.method-types{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    margin-bottom: 1.1em;
+}
+
+.method-types button{
+    width: 110px;
+    padding: 1vw 0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 10px -3px var(--shadow);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: var(--cream);
+    color: var(--red);
+}
+
+.method-types button:hover{
+    background-color: var(--btn-hover-cream);
+    color: var(--btn-hover-red);
+}
+.current{
+    background-color: var(--dark-red);
+    color: var(--cream);
+}
+.delivery form{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.entry{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.entry input{
+    min-width: 300px;
+    width: 36.5vw;
+    padding-left: 30px;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.entry .fa-address-book{
+    position: absolute;
+    top: 6px;
+    left:0;
+    font-size: 1.5rem;
+    color: var(--green);
+    
+}
+
+.delivery form button{
+    width: 50%;
+    padding: 1vh 0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 8px -3px var(--shadow);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.method .reservation{
+    display: none;
+
+}
+
+.reservation p{
+    color: var(--cream);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.95em;
+    text-align: center;
+}
+
+.reservation form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 1em;
+}
+
+.reservation form input{
+    padding: 1vw;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cream);
+    background-color: var(--red);
+    box-shadow: 0 5px 10px -3px var(--shadow);
+    border: none;
+}
+
+.reservation form button{
+    position: relative;
+    padding: 1.5vh 1vw;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 10px -3px var(--green);
+    background-color: #fff;
+    color: var(--shadow);
+    z-index: 1;
+}
+
+.reservation form button::after{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(113, 255, 113, 0.671);
+    z-index: -1;
+}
 .side-panel {
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 340px;
-  background: #ffb870;
+  background: var(--cream);
   padding: 0;
   box-shadow: -6px 0 20px rgba(0,0,0,.25);
   transform: translateX(100%);   /* hidden, pushed off-screen to the right */
@@ -455,7 +655,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #900;
+    background: var(--red, #990000);
     padding: 2vw;
 }
 .panel-head div span{
@@ -475,8 +675,8 @@ body{
     font-size: 1rem;
     text-align: center;
     color: #d3d3d3;
-    background: #990000;
-    border-bottom: 2px solid #990000;
+    background: var(--red, #990000);
+    border-bottom: 2px solid var(--red, #990000);
     padding-bottom: 2vh;
     margin-bottom: 2vh;
 }
@@ -486,7 +686,7 @@ body{
     font-weight: 700;
     border: none;
     background: none;
-    color: #ffb870;
+    color: var(--cream);
     cursor: pointer;
     transition: 0.4s;
 }
@@ -505,7 +705,7 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 0 2vw;
-    padding-bottom: 2vw;
+    padding-bottom: 0;
     color: var(--red-dark, #990000);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.15rem;
@@ -530,12 +730,12 @@ body{
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #900;
+    color: var(--red, #990000);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .add-item input[type="checkbox"]{
-    accent-color: #990000;
+    accent-color: var(--red, #990000);
     width: 15px;
     height: 15px;
 }
@@ -545,7 +745,7 @@ body{
 }
 
 .base{
-    background: #990000;
+    background: var(--red, #990000);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -591,6 +791,10 @@ body{
 
 .side-panel.open {
   transform: translateX(0);       /* slides into view */
+}
+
+#cart-btn.open{
+    transform: translateY(0);
 }
 
 .overlay {

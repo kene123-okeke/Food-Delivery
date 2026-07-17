@@ -18,9 +18,9 @@
                 </div>
             
                 <div class="user-btn">
-                    <a href="login.html">Sign Up</a>
-                    <form class="cart">
-                        <button type="button"><i class="fa fa-shopping-cart"></i> Cart</button>
+                    <a href="index.html">Home</a>
+                    <form class="cart" >
+                        <button type="button" id="shop-cart"><i class="fa fa-shopping-cart"></i> Cart</button>
                     </form>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <p>Your Crispy and creamy Sharwama. <br>One large sharwama bread, one sausage one portion of sauce, one and half large beef.</p>
                     </div>
                     <div class="food-img">
-                        <img src="../Images/sharwama1.jpg" alt="sharwama" width="600" height="350">
+                        <img loading="eager" src="../Images/sharwama1.jpg" alt="sharwama" width="600" height="350">
                     </div>
                     <form action="" class="types">
                         <button type="button"class="sizes">Single</button>
@@ -122,7 +122,7 @@
                         <p>Get your crispy chicken and your crunchy chips. One large chicken, one portion of chips, one of 2 sauces each (Creamy-spicy sauce and ketchup sauce).</p>
                     </div>
                     <div class="food-img">
-                        <img src="../Images/chicken-chips1.jpg" alt="sharwama" width="600" height="350">
+                        <img loading="lazy" src="../Images/chicken-chips1.jpg" alt="sharwama" width="600" height="350">
                     </div>
                     <form action="" class="types">
                         <button type="button"class="sizes" id="active">Single</button>
@@ -171,7 +171,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis id, incidunt numquam nesciunt quod tenetur quasi ab dolor illo velit. Aliquid quis fuga animi ducimus, accusantium labore veniam earum praesentium.</p>
                     </div>
                     <div class="food-img">
-                        <img src="../Images/pizza2.jpg" alt="sharwama" width="600" height="350">
+                        <img loading="lazy" src="../Images/pizza2.jpg" alt="sharwama" width="600" height="350">
                     </div>
                     <form action="" class="types">
                         <button type="button"class="sizes" id="active">Single</button>
@@ -221,7 +221,7 @@
                         <p>Get your chilled and natural fruit juice. Freshly squeezed fruit juice. From Watermelon to Orange to Pineapple.</p>
                     </div>
                     <div class="food-img">
-                        <img src="../Images/juice1.jpg" alt="sharwama" width="600" height="350">
+                        <img loading="" src="../Images/juice1.jpg" alt="sharwama" width="600" height="350">
                     </div>
                     <form action="" class="types">
                         <button type="button"class="sizes" id="active">Single</button>
@@ -275,7 +275,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis id, incidunt numquam nesciunt quod tenetur quasi ab dolor illo velit. Aliquid quis fuga animi ducimus, accusantium labore veniam earum praesentium.</p>
                     </div>
                     <div class="food-img">
-                        <img src="../Images/jollof.jpg" alt="sharwama" width="600" height="350">
+                        <img loading="lazy" src="../Images/jollof.jpg" alt="sharwama" width="600" height="350">
                     </div>
                     <form action="" class="types">
                         <button type="button"class="sizes" id="active">Jollof</button>
@@ -298,17 +298,17 @@
 
                  <div class="food-card" id="swallow" data-variants='{
                     "Egusi":{
-                        "img":"../Images/swallow.jpeg",
+                        "img":"../Images/Egusi.webp",
                         "prices":[
                         {"desc":"Your Crispy and creamy Sharwama.One large sharwama bread, one sausage one portion of sauce, one and half large beef.", "price":3000}], 
                         "additions":[{"label":"Extra Meat", "price": 400}, {"label":"Extra Swallow", "price":500}]},
                     "Okra":{
-                        "img":"../Images/fried.jpeg",
+                        "img":"../Images/okra.webp",
                         "prices":[
                         {"desc":"lorem ispum uhvnqilv q8iu  ncauilh aluqa 8ui ccccccccccccccccccccccc.", "price":1500}], 
                         "additions":[{"label":"Extra Meat", "price": 400}, {"label":"Extra Swallow", "price":500}]},
                     "Bitter-leaf":{
-                        "img":"../Images/coconut.jpeg",
+                        "img":"../Images/bitterleaf.webp",
                         "prices":[
                         {"desc":"lorem ispum abvav aiv aiv i vBVI vah a aviavjd dvIV DJBD DBAb v aua .", "price":2500}], 
                         "additions":[{"label":"Extra Meat", "price": 400}, {"label":"Extra Swallow", "price":500}]},
@@ -325,7 +325,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis id, incidunt numquam nesciunt quod tenetur quasi ab dolor illo velit. Aliquid quis fuga animi ducimus, accusantium labore veniam earum praesentium.</p>
                     </div>
                     <div class="food-img">
-                        <img src="../Images/swallow.jpeg" alt="sharwama" width="600" height="350">
+                        <img loading="lazy" src="../Images/Egusi.webp" alt="sharwama" width="600" height="350">
                     </div>
                     <form action="" class="types">
                         <button type="button"class="sizes" id="active">Egusi</button>
@@ -339,7 +339,7 @@
                         
                     </form>
                     <form class="customise-cart">
-                        <button type="button" class="customize"data-name="Swallow"data-img="../Images/swallow.jpeg" data-price="3000" data-additions='[{"label":"Extra Meat", "price": 400}, {"label":"Extra Swallow", "price":200}]'><h3>&#9998</h3></button>
+                        <button type="button" class="customize"><h3>&#9998</h3></button>
                         <button type="button" class="add-to-cart"><i class="fa fa-add"></i> Add</button>
                     </form>
                     </div>
@@ -382,6 +382,51 @@
                         <button class="confirm-btn">+ Add to Cart</button>
                     </div>
                 </div>
+            </div>
+
+            <div class="cart-btn" id="cart-btn">
+                <div class="cart-head">
+                    <!-- <div class="user-icon">
+                        <button type="button">
+                        <img src="" alt="" id="img">
+                        <input type="file"></button>
+                    </div> -->
+                    <h2><span>Your</span> Cart</h2>
+                    <button type="button" id="closecart">✕</button>
+                </div>
+
+                <div class="cart-additions">
+
+                
+
+                    <div class="total-price" id="total-pricing"></div>
+                </div>
+                <div class="method">
+                    <div class="method-types" id="methodtypes">
+                        <button type="button" class="del-types current" data-target="delivery">Delivery</button>
+                        <button type="button" class="del-types" data-target="reservation">Reservation</button>
+                    </div>
+
+                <div class="delivery" id="deliverygroup">
+                    <form>
+                        <span class="entry">
+                            <i class="fa fa-address-book"></i>
+                            <input type="search" placeholder="Enter Drop Location">
+                            <!-- <i class="fa fa-search"></i> -->
+                        </span>
+                        <button type="submit">Order Now</button>
+                    </form>
+                </div>
+
+                <div class="reservation" id="reservationgroup">
+                    <p>Enter Your Prefered Time of Pick-Up</p>
+                    <form>
+                        <input type="time" placeholder="00-00-00">
+                        <button type="submit">Reserve Now</button>
+                    </form>
+                </div>
+                </div>
+
             </div>
 
 

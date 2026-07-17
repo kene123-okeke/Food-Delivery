@@ -66,8 +66,8 @@ body{
     margin: auto;
     background: #ffb7705e;
     min-width: 40vw;
-    max-width: fit-content;
-    height:80vh;
+    max-width: 50vw;
+    height:90vh;
     padding: 4vh 2vw;
     font-family: var(--font1);
     border-radius: 20px;
@@ -164,6 +164,22 @@ body{
     text-align: center;
 }
 
+.form-error-banner{
+    background: #fdecea;
+    border: 1.5px solid #e0472c;
+    color: #b3341f;
+    padding:10px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    text-align: center;
+    display: none;
+}
+
+.form-error-banner.show{
+    display: block;
+}
+
 .input-form{
     display: flex;
     flex-direction: column;
@@ -252,16 +268,17 @@ body{
 .signedin{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10vw;
+    justify-content: space-between;
+    /* gap: 10vw; */
     padding: 0 15px;
     margin-bottom: 2vh;
+    font-size: 0.9rem;
 }
 
 .remember-me input[type="checkbox"]{
     accent-color: var(--red);
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
 }
 
@@ -298,11 +315,36 @@ body{
     box-shadow: 0 5px 10px var(--shadow);
 }
 
-.signin-btn button:hover{
-    filter: thermal();
-}
 .sign-up{
     display: none;
+}
+
+.error-msg{
+    display: inline-flex;
+    min-height: 16px;
+    font-size: 0.78rem;
+    color: var(--error-msg, #e0472c);
+    margin-left: 4px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease;
+    float: left;
+
+}
+
+.error-msg i{
+    margin-right: 4px;
+    color: #e0472c;
+}
+
+.error-msg.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input.invalid{
+    border-color: #e0472c;
+    box-shadow: 0 0 0 3px rgba(224,71, 44, .12);
 }
 @media(max-width:750px){
     .side-pane{
