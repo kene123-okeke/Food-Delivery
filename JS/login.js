@@ -3,7 +3,9 @@ const logIn = document.getElementById('login');
 const signUp = document.getElementById('signup');
 const heading = document.getElementById('heading');
 const subHeading = document.getElementById('subheading');
-const passWordShow = document.querySelectorAll('.eye-btn')
+const passWordShow = document.querySelectorAll('.eye-btn');
+const loginMessage = document.querySelector('.login-approval-msg');
+const signupMessage = document.querySelector('.signup-confirm-msg');
 
 switchButton.forEach(btn =>{
     btn.addEventListener('click', () => {
@@ -87,6 +89,11 @@ loginForm.addEventListener('submit', (e) => {
     if (enteredEmail === correctEmail && enteredPassword === correctpassword){
         loginError.classList.remove('show');
         window.location.href = loginForm.action;
+
+        loginMessage.style.display = "block";
+        setTimeout(() => {
+            loginError.style.display = "none"
+        }, 3000)
 
     }else{
         loginError.classList.add('show');

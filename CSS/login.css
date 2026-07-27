@@ -67,7 +67,7 @@ body{
     background: #ffb7705e;
     min-width: 40vw;
     max-width: 50vw;
-    height:90vh;
+    height:620px;
     padding: 4vh 2vw;
     font-family: var(--font1);
     border-radius: 20px;
@@ -313,6 +313,12 @@ body{
     border: none;
     cursor: pointer;
     box-shadow: 0 5px 10px var(--shadow);
+    transition: ease-in-out 0.3s;
+}
+
+.signin-btn button:hover{
+    color: var(--red);
+    background: var(--cream);
 }
 
 .sign-up{
@@ -346,8 +352,36 @@ input.invalid{
     border-color: #e0472c;
     box-shadow: 0 0 0 3px rgba(224,71, 44, .12);
 }
+
+.login-approval-msg, .signup-confirm-msg{
+    background-color: var(--light-shadow);
+    display: none;
+    width:350px;
+    margin: auto;
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    bottom: 5vh;
+    transform: translate(-50%, -50%);
+    padding: 2dvw;
+    border-radius: 10px;
+    transition: ease-in 0.2s;
+}
+
+.login-approval-msg p, .signup-confirm-msg p{
+    text-align: center;
+    font-family: var(--font1);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
 @media(max-width:750px){
     .side-pane{
         display: none;
+    }
+}
+@media(max-width:500px){
+    .login-card{
+        min-width: 85vw;
+        /* height: min-content; */
     }
 }
