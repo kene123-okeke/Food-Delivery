@@ -144,3 +144,32 @@ function closeCartPanel(){
 }
 document.getElementById('closecart').addEventListener('click', closeCartPanel);
 overlay.addEventListener('click', closeCartPanel);
+
+const  menuList = document.querySelectorAll('.menu-list');
+
+menuList.forEach(btn => {
+  btn.addEventListener('click', () => {
+    menuList.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    const target = document.getElementById(btn.dataset.target);
+    if (target){
+      target.scrollIntoView({behavior:'smooth'});
+    }
+  })
+
+})
+
+const sections = document.querySelectorAll('.food-card');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting){
+      const matchingBtn = document.querySelector('.menu-list[data-target="${entry.target.id}"]');
+      if (matchingBtn){
+        menuList.forEach(b => b.classList.remove('selected'));
+        menuList.classList.add('selected');
+      }
+    }
+  });
+}, {threshold: 0.5});
+sections.forEach(section => observer.observe(section));

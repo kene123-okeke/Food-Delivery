@@ -75,6 +75,7 @@ emailInput.addEventListener('input', () => {
 
 const loginForm = document.getElementById('loginForm');
 const loginError = document.getElementById('loginError');
+const pageLoader = document.getElementById('pageloader');
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -88,14 +89,29 @@ loginForm.addEventListener('submit', (e) => {
 
     if (enteredEmail === correctEmail && enteredPassword === correctpassword){
         loginError.classList.remove('show');
-        window.location.href = loginForm.action;
-
         loginMessage.style.display = "block";
         setTimeout(() => {
-            loginError.style.display = "none"
-        }, 3000)
+            loginMessage.style.display = "none";
+            pageLoader.style.display = "flex";
+            setTimeout(() => {
+                window.location.href = loginForm.action;
+            }, 2000)
+        }, 2000)
 
     }else{
         loginError.classList.add('show');
     }
+})
+
+const signupForm = document.getElementById('signupform');
+signupForm.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    signupMessage.style.display = "block";
+    setTimeout(() =>{
+        signupMessage.style.display = "none";
+        pageLoader.style.display = "flex";
+        setTimeout(() => {
+            window.location.href = signupForm.action;
+        }, 2000)
+    }, 2000)
 })

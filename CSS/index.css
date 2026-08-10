@@ -1,18 +1,15 @@
 :root{
-    --red:#8b0000;
+    --red:#FF5A36;
     --dark-red:#6b0000;
     --placeholder:#550000;
-    --cream:#ffb870;
-    --btn-hover-cream:#da9c5f;
-    --btn-hover-red:#bb0000;
+    --cream:#FFD166;
+    --background-tint:#FAFAF8;
     --shadow:#1a1a1a;
     --background-overlay:#2b2b2b;
-    --background: #fff8f0;
     --light-shadow:#e5e5e5;
-    --text-color:#2b1810;
-    --green:#4f7d33;
+    --text-color:#1C1C1E;
+    --green:#06D6A0;
     --font1: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 }
 
 *{
@@ -151,10 +148,7 @@ body{
 .body-block{
     position: relative;
     display: flexbox;
-    background:#ffb870;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
+    background-color: var(--cream);
     width: 100%;
     padding: 110px 0px;
     z-index: 1;
@@ -242,6 +236,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     width: 60vw;
+    color: var(--text-color);
 }
 
 .text-container .text p{
@@ -262,7 +257,7 @@ body{
     white-space: nowrap;
     text-decoration: none;
     text-align: center;
-    border:2px solid #990000;
+    border:2px solid var(--red);
     font-family: var(--font1, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif);
     font-weight: 500;
     font-size: 1.1rem;
@@ -488,7 +483,7 @@ body{
 
 .manual{
     position: relative;
-    background: var(--cream, #ffb870);
+    background: var(--background);
     padding:1vw;
     z-index: -1;
 }
@@ -497,7 +492,7 @@ body{
     content: "";
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient( to top, transparent 95%, #900 100%);
+    background: linear-gradient( to top, transparent 95%, var(--red) 100%);
     z-index:-1;
 }
 
@@ -739,7 +734,6 @@ body{
     font-size: 1.1rem;
     text-wrap-mode: wrap;
     font-weight: 500;
-    background: #990000;
     padding: 15px;
     border-radius: 1px;
 }

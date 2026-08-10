@@ -1,15 +1,15 @@
 :root{
-    --red:#990000;
+    --red:#FF5A36;
     --dark-red:#6b0000;
+    --input-field:#ffd16686;
     --placeholder:#550000;
-    --cream:#ffb870;
-    --btn-hover-cream:#da9c5f;
-    --btn-hover-red:#bb0000;
+    --cream:#FFD166;
+    --background-tint:#eAeAe8;
     --shadow:#1a1a1a;
     --background-overlay:#2b2b2b;
-    --light-shadow:#e5e5e5;
-    --text-color:#0a0a0a;
-    --green:#55c00d;
+    --light-shadow:#757575;
+    --text-color:#1C1C1E;
+    --green:#06D6A0;
     --font1: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
@@ -45,36 +45,40 @@ body{
     background-blend-mode: overlay;
 }
 
-.back-home{
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    z-index: 999;
-    background: var(--red);
-    padding: 1vw;
-    border-radius: 0px 10px 10px;
+@property --a{
+    syntax: "<angle>";
+    initial-value: 0deg;
 }
 
-.back-home a{
-    color: var(--cream);
-    text-decoration: none;
-    font-family: var(--font1);
-
+@keyframes spin{
+    to{--a:360deg;
+    }
 }
 
 .login-card{
     margin: auto;
-    background: #ffb7705e;
+    position: relative;
+    background-color: var(--background-tint);
     min-width: 40vw;
     max-width: 50vw;
-    height:620px;
+    max-height:90dvh;
     padding: 4vh 2vw;
     font-family: var(--font1);
     border-radius: 20px;
-    border:1px solid var(--red);
+    border:2px solid var(--red);
     aspect-ratio: 100%;
-    transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.5s;
     overflow-y: auto;
+    z-index: 2;
+}
+
+.login-card::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient( red, yellow, green);
+    animation: spin 3s linear infinite;
+    z-index: 91;
+
 }
 
 .login-card::-webkit-scrollbar{
@@ -107,7 +111,7 @@ body{
 }
 
 .login-switch button{
-    width: 49%;
+    width: 60%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -116,6 +120,8 @@ body{
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 600;
+    white-space:unset;
     color: var(--red, #990000);
     background: var(--cream, #ffb870);
     transition: ease-in-out 0.5s;
@@ -128,8 +134,8 @@ body{
     transform: translateY(-5px);
 }
 .login-switch button:hover{
-    color: var(--btn-hover-red);
-    background: var(--btn-hover-cream);
+    color: var(--cream);
+    background: var(--red);
     /* transform: translateY(-1px); */
     /* border: 1px solid var(--cream); */
 }
@@ -145,9 +151,11 @@ body{
     white-space: nowrap;
     padding: 1.5vh 1vw;
     width: 45%;
+    gap: 1dvw;
     border-radius: 10px;
     border: none;
     font-size: 0.9rem;
+    font-weight:600;
     color: var(--red);
     background: var(--cream);
     cursor: pointer;
@@ -211,7 +219,7 @@ body{
     padding-bottom: 5px;
     border: 2px solid var(--red);
     background: transparent;
-    color: var(--red);
+    color: var(--text-color);
 }
 
 .entry div input:hover{
@@ -219,10 +227,10 @@ body{
 }
 
 .entry div input::placeholder{
-    color: var(--placeholder);
+    color: var(--light-shadow);
 }
 .entry div input:focus{
-    background: var(--cream);
+    background: var(--input-field);
     border-color: var(--red);
     outline: none;
     box-shadow: 0 0 5px var(--shadow);
@@ -269,16 +277,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    white-space: nowrap;
     /* gap: 10vw; */
-    padding: 0 15px;
+    padding: 0 2px;
     margin-bottom: 2vh;
     font-size: 0.9rem;
 }
 
 .remember-me input[type="checkbox"]{
     accent-color: var(--red);
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
 }
 
@@ -309,7 +318,7 @@ body{
     background: var(--red);
     color: var(--cream);
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     border: none;
     cursor: pointer;
     box-shadow: 0 5px 10px var(--shadow);
@@ -354,7 +363,7 @@ input.invalid{
 }
 
 .login-approval-msg, .signup-confirm-msg{
-    background-color: var(--light-shadow);
+    background-color: var(--background-tint);
     display: none;
     width:350px;
     margin: auto;
@@ -373,6 +382,39 @@ input.invalid{
     font-family: var(--font1);
     font-weight: 600;
     font-size: 1.1rem;
+}
+
+.page-loader{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--cream);
+    opacity: 0.8;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 9999;
+}
+
+.page-loader p{
+    color: var(--red);
+    font-weight: 600;
+    font-family: var(--font1);
+    font-size: 1rem;
+}
+
+.spinner{
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgba(153, 0, 0, 0.15);
+    border-top-color: var(--red);
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin{
+    to{transform: rotate(360deg);}
 }
 @media(max-width:750px){
     .side-pane{

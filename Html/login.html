@@ -9,13 +9,7 @@
 
     </head>
     <body>
-        <div class="side-pane">
-            <img src="../Images/IMG-20260701-WA6106.jpg" alt="side-pane" >
-        </div>
         <div class="main-block">
-            <div class="back-home">
-                <a href="Index.html"><i class="fa fa-arrow-left-long"></i> Home</a>
-            </div>
             <div class="login-card">
                 
                 <h1 id="heading">Welcome Back</h1>
@@ -27,8 +21,8 @@
                 </div>
                 <p>Continue with</p>
                 <div class="sign-in-with">
-                    <button type="button" class="signin-btn"><i class="fa fa-google"></i>Google</button>
-                    <button type="button" class="signin-btn"><i class="fa fa-facebook-f"></i>Facebook</button>
+                    <button type="button" class="signin-btn"><img src="../Images/google-icon-logo-svgrepo-com.svg" alt="Google Icon"width="20"> Google</button>
+                    <button type="button" class="signin-btn"><img src="../Images/facebook-3-logo-svgrepo-com.svg" alt="Facebook Icon" width="20">Facebook</button>
                 </div>
 
                 <p>or continue with email</p>
@@ -71,7 +65,7 @@
 
                 </div>
                 <div class="sign-up" id="signup">
-                    <form method="get" class="input-form" action="menu.html">
+                    <form method="get" class="input-form" action="index.html" id="signupform">
                         <div class="typing">
 
                             <div class="entry">
@@ -128,6 +122,10 @@
             <div class="signup-confirm-msg">
                 <p>Your Account has been Created Successfully</p>
                 <p>✅✅</p>
+            </div>
+            <div class="page-loader" id="pageloader">
+                <div class="spinner"></div>
+                <p>Please Wait... </p>
             </div>
         </div>
         <script src="../JS/login.js"></script>
