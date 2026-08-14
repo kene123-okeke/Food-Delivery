@@ -83,6 +83,7 @@ body{
     color: var(--cream, #ffb870);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    font-size: 1.4r 51em;
     gap: 1%;
 }
 
@@ -123,7 +124,7 @@ body{
     outline: none;
 }
 
-.login-btn a{
+.login-btn button{
     border: 2px solid #ffb870;
     padding: 8px 20px;
     border-radius: 10px;
@@ -136,7 +137,7 @@ body{
     text-decoration: none;
 }
 
-.login-btn a:hover{
+.login-btn button:hover{
     background: var(--cream, #ffb870);
     color: var(--red, #990000);
 }
@@ -536,7 +537,7 @@ body{
 
 .number-card p{
     color: var(--light-shadow, #fff8f0);
-    font-weight: 350;
+    font-weight: 500;
     font-size: 1.1rem;
 }
 .manual h2 span, .number-card h3 span{
