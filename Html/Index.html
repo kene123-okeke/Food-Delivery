@@ -18,8 +18,8 @@
                     <i class="fa fa-search"></i>
                     <input type="search" name="search" placeholder="Search Food">
                 </form>
-                <div class="login-btn">
-                    <button type="button" title="Log out"><i class="fa fa-sign-out-alt"></i> Log Out</button>
+                <div class="login-btn" id="top-logout-btn">
+                    <button type="button"  title="Log out"><i class="fa fa-sign-out-alt"></i> Log Out</button>
                 </div>
             </div>
         </div>
@@ -84,14 +84,16 @@
             </div>
         </div>
 
-        <div class="logout-box">
+        <div class="logout-box" id="logout-box">
             <h1 class="logout-icon">🥺🥺</h1>
             <p> do you want to log out?</p>
             <div class="logout-btn">
                 <a href="login.html">Yes</a>
-                <a href="Index.html">No</a>
+                <button type="button" class="cancel-btn">No</button>
             </div>
         </div>
+
+        <div class="overlay" id="overlay"></div>
         
         <div class="footer">
             <div class="footer-text">

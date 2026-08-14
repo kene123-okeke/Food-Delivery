@@ -546,13 +546,14 @@ body{
 .logout-box{
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    padding: 3vh 5vw;
-    display :block;
+    padding: 20px 5px;
+    display :none;
     border:1px solid #990000;
     border-radius: 10px;
     margin: auto;
-    width:50dvw;
-    height:25dvh;
+    min-width: 340px;
+    max-width:350px;
+    height:180px;
     background: var(--background-tint);
     z-index: 999;
 }
@@ -561,7 +562,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2dvh;
+    margin-bottom: 10px;
 }
 
 .logout-box p{
@@ -571,7 +572,7 @@ body{
     text-transform: capitalize;
     font-weight: 500;
     color: var(--text-color);
-    margin-bottom: 2dvh;
+    margin-bottom: 20px;
 }
 
 .logout-btn{
@@ -581,15 +582,36 @@ body{
     justify-content: space-evenly;
 }
 
-.logout-btn a{
+.logout-btn a, .cancel-btn{
     border: 1px solid var(--red, #990000);
-    padding: 1vh 3vw;
+    padding: 7px 20px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--cream);
     background-color: var(--red, #990000);
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logout-btn a:hover, .cancel-btn:hover{
+    color: var(--red);
+    background-color: var(--cream);
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    opacity: 0.8;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 998;
 }
 
 .footer{
