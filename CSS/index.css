@@ -123,7 +123,7 @@ body{
     outline: none;
 }
 
-.login-btn a{
+.login-btn button{
     border: 2px solid #ffb870;
     padding: 8px 20px;
     border-radius: 10px;
@@ -136,7 +136,7 @@ body{
     text-decoration: none;
 }
 
-.login-btn a:hover{
+.login-btn button:hover{
     background: var(--cream, #ffb870);
     color: var(--red, #990000);
 }
@@ -541,6 +541,55 @@ body{
 }
 .manual h2 span, .number-card h3 span{
     color:var(--green);
+}
+
+.logout-box{
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 3vh 5vw;
+    display :block;
+    border:1px solid #990000;
+    border-radius: 10px;
+    margin: auto;
+    width:50dvw;
+    height:25dvh;
+    background: var(--background-tint);
+    z-index: 999;
+}
+
+.logout-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2dvh;
+}
+
+.logout-box p{
+    text-align: center;
+    font-family: var(font1);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 2dvh;
+}
+
+.logout-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logout-btn a{
+    border: 1px solid var(--red, #990000);
+    padding: 1vh 3vw;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--cream);
+    background-color: var(--red, #990000);
 }
 
 .footer{
