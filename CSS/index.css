@@ -1,3 +1,4 @@
+/* Color Palette */
 :root{
     --red:#990000;
     --dark-red:#6b0000;
@@ -38,6 +39,8 @@ body{
     animation-range: entry 3% cover 40%;
 }
 
+/* Appearing Animation Definition */
+
 @keyframes appear{
     from{
         opacity: 0.8;
@@ -52,6 +55,7 @@ body{
 
 }
 
+/* Scroll up animation defining */
 @keyframes scroll-up{
     from{
         opacity: 0.2;
@@ -69,7 +73,7 @@ body{
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 2vh 3vw;
+    padding: 2vh 10px;
     align-items: center;
     justify-content: space-between;
     background-color: var(--red, #990000);
@@ -83,8 +87,8 @@ body{
     color: var(--cream, #ffb870);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 1.4r 51em;
-    gap: 1%;
+    font-size: 1.3rem;
+    width:fit-content;
 }
 
 .logo h3 span{
@@ -94,7 +98,8 @@ body{
 
 .user-btn{
     align-items: center;
-    margin-left: 10%;
+    justify-content: flex-end;
+    margin-left: auto;
     display: flex;
     float: right;
     gap: 2vw;
@@ -103,6 +108,19 @@ body{
 
 .user-btn .search-bar{
     border-bottom: 2px solid #ffb870;
+}
+
+.user-btn button{
+    display:none;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-weight: 600;
+    font-family: var(--font1);
+    cursor: pointer;
+    padding:12px 10px;
+    border-radius: 50%;
 }
 
 .search-bar:hover{
@@ -129,12 +147,16 @@ body{
     padding: 8px 20px;
     border-radius: 10px;
     background: var(--red, #990000);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font1, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif);
     font-size: 1rem;
     font-weight: 500;
     color: var(--cream, #ffb870);
     cursor: pointer;
     text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .login-btn button:hover{
@@ -145,7 +167,7 @@ body{
 /* The end of the the navigation bar */
 
 
-/* The head block with Yellow food background */
+/* The head block with Yellow food background (Hero Section)*/
 .body-block{
     position: relative;
     display: flexbox;
@@ -274,6 +296,7 @@ body{
 
 /* The end of the head block with yellow background */
 
+/* Beginning of the Food Panel */
 .Food-panel{
     background: var(--red, #990000);
     padding-top: 30px;
@@ -292,8 +315,8 @@ body{
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
-    height: 43vh;
-    width: 20vw;
+    min-height: 291px;
+    width: 20dvw;
     margin:10px;
     transition: ease-in-out 1.5s;
     box-shadow: 0px 0px 30px #121212;
@@ -481,7 +504,9 @@ body{
 .food-grid div:hover{
     transform: scale(1.05);
 }
+/* End of the food panel */
 
+/* Beginning of the Manual Section */
 .manual{
     position: relative;
     background: var(--background);
@@ -543,7 +568,9 @@ body{
 .manual h2 span, .number-card h3 span{
     color:var(--green);
 }
+/* End of the Manual Section */
 
+/* Pop-out Logout confirmation Box */
 .logout-box{
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -572,6 +599,7 @@ body{
     font-size: 1.2rem;
     text-transform: capitalize;
     font-weight: 500;
+    font-family: var(--font1);
     color: var(--text-color);
     margin-bottom: 20px;
 }
@@ -590,6 +618,7 @@ body{
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
+    font-family: var(--font1);
     color: var(--cream);
     background-color: var(--red, #990000);
     width: 70px;
@@ -614,7 +643,9 @@ body{
     gap: 16px;
     z-index: 998;
 }
+/* End of pop-out box*/
 
+/* Beginning of the Footer Section */
 .footer{
     position: relative;
     background-color: var(--shadow, #1a1a1a);
@@ -717,34 +748,62 @@ body{
     transform: scale(1.05);
     box-shadow: 0 0 10px #f1f1f1 ;
 }
+/* End of the Footer Section */
 
+/* Media Queries */
 @media (max-width:670px){
-    body{
-        overflow-x:hidden;
-        width: 100vw;
-    }
     .nav-bar{
         display: flex;
-        flex-direction: column;
-        padding: 10px 10px;
+        flex-direction: row;
+        padding: 10px;
         max-width: 100%;
+        gap: 5px;
     }
 
     .logo{
         margin-bottom: 1vh;
+        font-size: 1.1rem;
     }
 
     .user-btn{
-        margin: 0px;
-        justify-content: space-evenly;
-        width: 100vw;
-        gap: 10px;
+        gap: 7px;
+        margin: none;
     }
 
-    .login-btn{
-        margin-left: 0px;
-        margin-right: 0px;
+    .search-bar{
+        display: none;
     }
+
+    .user-btn button{
+        display: flex;
+    }
+
+    .user-btn button p{
+        display: none;
+    }
+
+    .login-btn button{
+        border-radius: 50%;
+        padding:12px 10px;
+        border: none;
+        /* box-shadow: 0 0 5px var(--background-overlay); */
+    }
+
+    .login-btn button:hover, .search-icon:hover{
+        box-shadow: 0 0 10px var(--shadow);
+        background: none;
+        color: var(--cream);
+    }
+
+    .login-btn p{
+        display: none;
+    }
+
+    body{
+        overflow-x:hidden;
+        width: 100vw;
+    }
+    
 
     .text-container, .text-container .text p{
         width: 80vw;
