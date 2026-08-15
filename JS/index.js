@@ -3,6 +3,8 @@ const logoutBox = document.getElementById('logout-box');
 const cancel = document.querySelectorAll('.cancel-btn');
 const overLay = document.getElementById('overlay');
 const overlayPanel = document.querySelectorAll('.overlay')
+const searchBar = document.queryselectorAll('.search-bar');
+const searchIcon = document.querySelectorAll('.search-icon');
 
 function closeBox(){
     logoutBox.style.display = "none";
@@ -23,5 +25,11 @@ logoutButton.forEach(btn => {
         overlayPanel.forEach(b => {
             b.addEventListener('click', closeBox)
         });
+    });
+});
+
+searchIcon.forEach(icon => {
+    icon.addEventListener('click', () => { searchBar.style.display = "flex";
+        overLay.style.display = "flex";
     });
 });
