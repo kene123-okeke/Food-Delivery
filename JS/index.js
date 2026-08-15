@@ -2,8 +2,8 @@ const logoutButton = document.querySelectorAll('.login-btn');
 const logoutBox = document.getElementById('logout-box');
 const cancel = document.querySelectorAll('.cancel-btn');
 const overLay = document.getElementById('overlay');
-const overlayPanel = document.querySelectorAll('.overlay')
-const searchBar = document.queryselectorAll('.search-bar');
+const overlayPanel = document.querySelectorAll('.overlay');
+const searchBar = document.getElementById('search-bar-box');
 const searchIcon = document.querySelectorAll('.search-icon');
 
 function closeBox(){
@@ -29,7 +29,15 @@ logoutButton.forEach(btn => {
 });
 
 searchIcon.forEach(icon => {
-    icon.addEventListener('click', () => { searchBar.style.display = "flex";
+    icon.addEventListener('click', () => { 
+        document.querySelector('.second-search').style.display = "flex";
         overLay.style.display = "flex";
+
+        overlayPanel.forEach(panel => {
+            panel.addEventListener('click', () => {
+                document.querySelector('.second-search').style.display = "none";
+                overLay.style.display = "none";
+            });
+        })
     });
 });

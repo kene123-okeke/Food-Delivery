@@ -138,6 +138,8 @@ body{
     font-size: 0.9rem;
 }
 
+
+
 .search-bar input:focus-visible{
     outline: none;
 }
@@ -641,7 +643,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 16px;
-    z-index: 998;
+    z-index: 900;
 }
 /* End of pop-out box*/
 
@@ -772,7 +774,26 @@ body{
 
     .search-bar{
         display: none;
+        z-index: 997;
     }
+
+    .second-search-bar input{
+    display: none;
+    padding: 3%;
+    background: var(--cream);
+    border: none;
+    color: var(--text-color);
+    font-family: var(--font1);
+    font-weight: 600;
+    font-size: 1rem;
+    width: 60dvw;
+    margin: 0 auto;
+    height: 30px;
+    position: fixed;
+    top: 5dvh; right: 0; left: 0; bottom: 0;
+    z-index: 995;
+}
+
 
     .user-btn button{
         display: flex;
