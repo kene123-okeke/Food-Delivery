@@ -346,8 +346,6 @@ body{
     border-radius: 10px;
     max-width: 600px;
     box-shadow: 0 0 20px #1a1a1a;
-    transition: ease-in-out 0.6s;
-}
 
 .food-img img:hover{
     transform: scale(1.03);
@@ -999,4 +997,4 @@ body{
     .category{
         overflow-x: auto;
     }
-}
+} }

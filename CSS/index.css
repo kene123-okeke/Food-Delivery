@@ -615,7 +615,7 @@ body{
     justify-content: space-evenly;
 }
 
-.logout-btn a, .cancel-btn{
+.logout-btn a{
     border: 1px solid var(--red, #990000);
     padding: 7px 20px;
     border-radius: 10px;
@@ -625,6 +625,21 @@ body{
     font-family: var(--font1);
     color: var(--cream);
     background-color: var(--red, #990000);
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    border: 1px solid var(--red, #990000);
+    padding: 7px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: var(--font1);
+    color: var(--red);
+    background-color: var(--cream, #990000);
     width: 70px;
     text-align: center;
     cursor: pointer;
