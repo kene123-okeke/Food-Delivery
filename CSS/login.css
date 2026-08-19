@@ -36,7 +36,7 @@ body{
     position: relative;
     display: flex;
     flex: 2;
-    height: 100vh;
+    min-height: 100dvh;
     background-color: var(--shadow);
     background-image:url("../Images/background.jpg");
     background-repeat: no-repeat;
@@ -59,14 +59,13 @@ body{
     margin: auto;
     position: relative;
     background-color: var(--background-tint);
-    min-width: 40vw;
-    max-width: 50vw;
+    min-width: 40dvw;
+    max-width: 50dvw;
     max-height:90dvh;
     padding: 4vh 2vw;
     font-family: var(--font1);
     border-radius: 20px;
     border:2px solid var(--red);
-    aspect-ratio: 100%;
     transition: ease-in-out 0.5s;
     overflow-y: auto;
     z-index: 2;
