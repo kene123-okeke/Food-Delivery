@@ -395,7 +395,7 @@ body{
     gap: 3vw;
 }
 .price-btn{
-    padding: 0.5vh 3vw;
+    padding: 0.5vh 2vw;
     border: none;
     border-radius:25px;
     font-size: 1.1rem;
@@ -412,15 +412,15 @@ body{
     transform: scale(1.1);
 }
 .customise-cart{
-    display: flex;
-    gap: 3vw;
+    display: flexbox;
+    gap: 2vw;
     align-items: center;
 }
 
 .customize{
-    padding: 0.5vh;
+    padding: 1vh;
     border: none;
-    border-radius:50%;
+    border-radius:20px;
     font-size: 1.1rem;
     font-weight:200;
     color: var(--red, #990000);
@@ -432,7 +432,7 @@ body{
 
 .customize:hover{
     color: var(--cream, #ffb870);
-    background: var(--red, #990000);
+    background: var(--dark-red, #990000);
 }
 
 .add-to-cart{
@@ -482,7 +482,7 @@ body{
 }
 
 #drinks .header{
-     background-image: url("../Images/juice2.jpeg");
+    background-image: url("../Images/juice2.jpeg");
     background-size: cover;
     background-position: center;
     color: transparent;
@@ -561,13 +561,76 @@ body{
 
 .cart-additions{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2vw;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding-top: 3dvw;
+    max-height: 73dvh;
     overflow-y: auto;
+    z-index: 0;
 }
 
-.method{
+
+
+.cart-item{
+    display: flex;
+    flex-direction: column;
+    background-color: #fafaf873;
+    gap: 2dvh;
+    font-family: var(--font1);
+    font-size: 1.1rem;
+    font-weight: 400;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1vh 2vw;
+    color: var(--text-color);
+    
+}
+
+.cart-remove-btn{
+    background: none;
+    border: none;
+    display: flex;
+    font-size: 1.5rem;
+    color:var(--dark-red);
+    font-weight: 600;
+    cursor: pointer;
+    justify-content: right;
+}
+
+.cart-total{
+    background: var(--red);
+    display: flex;
+    flex-direction: column;
+    padding: 3vh 2vw;
+    position: fixed;
+    bottom: 2vh;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 1.3rem;
+    z-index: 0;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5dvh;
+}
+.cart-total .total-text{
+    font-weight: 700;
+}
+
+.checkout a{
+    border: 1px solid ;
+    padding: 1vh 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 1vh;
+    background: var(--green);
+    color: var(--text-color);
+}
+/*.method{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -703,19 +766,19 @@ body{
     left: 0; right: 0; top: 0; bottom: 0;
     background: rgba(113, 255, 113, 0.671);
     z-index: -1;
-}
+} */
 .side-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 340px;
-  background: var(--cream);
-  padding: 0;
-  box-shadow: -6px 0 20px rgba(0,0,0,.25);
-  transform: translateX(100%);   /* hidden, pushed off-screen to the right */
-  transition: transform 0.3s ease;
-  z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 340px;
+    background: var(--cream);
+    padding: 0;
+    box-shadow: -6px 0 20px rgba(0,0,0,.25);
+    transform: translateX(100%);   /* hidden, pushed off-screen to the right */
+    transition: transform 0.3s ease;
+    z-index: 100;
 }
 
 .panel-head{
@@ -857,7 +920,7 @@ body{
 }
 
 .side-panel.open {
-  transform: translateX(0);       /* slides into view */
+    transform: translateX(0);       /* slides into view */
 }
 
 #cart-btn.open{
@@ -865,18 +928,18 @@ body{
 }
 
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 90;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 90;
 }
 
 .overlay.open {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .footer{

@@ -3,6 +3,8 @@ const overlay = document.getElementById('overlay');
 const cartBtn = document.getElementById('cart-btn');
 const shopBtn = document.getElementById('shop-cart');
 
+let cart = [];
+
 document.querySelectorAll('.food-card').forEach(card=>{
   const variants = JSON.parse(card.dataset.variants);
   const pricesContainer = card.querySelector('.prices');
@@ -74,7 +76,7 @@ document.querySelectorAll('.customize').forEach(btn =>{
 
     document.getElementById('panelName').textContent = currentType;
     document.getElementById('panelImg').src = data.img;
-   
+  
     const container = document.getElementById('panelAdditions');
     container.innerHTML = '';
     data.additions.forEach(item => {
@@ -90,6 +92,22 @@ document.querySelectorAll('.customize').forEach(btn =>{
 
     panel.classList.add('open');
     overlay.classList.add('open');
+
+
+    const confirmBtn = document.getElementById('confirmAddBtn');
+    confirmBtn.onclick = () => {
+      const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
+      const chosenAdditions = Array.from(checkedBoxes).map(box => ({
+        label: box.closest('.add-item').querySelector('label').textContent.trim(),
+        price: Number(box.dataset.price)
+      }));
+
+      addToCart(currentType, card.querySelector('h2, h3')?.textContent || currentType, basePrice, chosenAdditions);
+
+      closePanel()
+      cartBtn.classList.add('open');
+      overlay.classList.add('open');
+    };
   })
 })
 
@@ -100,6 +118,55 @@ function updateSubtotal(basePrice){
   checkedBoxes.forEach(box => total += Number(box.dataset.price));
   document.getElementById('panelTotal').textContent = 'N' + total.toLocaleString();
 }
+
+function addToCart(name, type, basePrice, additions){
+  const item = {
+    name: name,
+    type:type,
+    basePrice:basePrice,
+    additions:additions,
+    total:basePrice + additions.reduce((sum, a) => sum + a.price, 0)
+  };
+
+  cart.push(item);
+  renderCart();
+}
+
+function renderCart(){
+  const cartItemsE1 = document.getElementById('cartItems');
+  cartItemsE1.innerHTML = '';
+
+  let grandTotal = 0;
+
+  cart.forEach((item, index) => {
+    grandTotal += item.total;
+
+    const additionsText = item.additions.length > 0
+    ? item.additions.map(a => a.label).join(',')
+    : 'No extras';
+
+    cartItemsE1.innerHTML += `
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <strong> ${item.name} (${item.type})</strong>
+        <span class="cart-item-additins">${additionsText}</span>
+      </div>
+      <div class="cart-item-price">₦${item.total.toLocaleString()}</div>
+      <button class="cart-remove-btn" title="Remove" data-index="${index}">✕</button>
+    </div>`;
+  });
+
+  document.getElementById('cartTotal').textContent = 'N' + grandTotal.toLocaleString();
+}
+
+
+document.getElementById('cartItems').addEventListener('click', (e) => {
+  if (e.target.matches('.cart-remove-btn')){
+    const index = Number(e.target.dataset.index);
+    cart.splice(index, 1);
+    renderCart();
+  }
+});
 
 // Close when clicking the X or the dark overlay
 document.getElementById('closePanel').addEventListener('click', closePanel);
@@ -164,10 +231,10 @@ const sections = document.querySelectorAll('.food-card');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting){
-      const matchingBtn = document.querySelector('.menu-list[data-target="${entry.target.id}"]');
+      const matchingBtn = document.querySelector(`.menu-list[data-target="${entry.target.id}"]`);
       if (matchingBtn){
         menuList.forEach(b => b.classList.remove('selected'));
-        menuList.classList.add('selected');
+        matchingBtn.classList.add('selected');
       }
     }
   });
