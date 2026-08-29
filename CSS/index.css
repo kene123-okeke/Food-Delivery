@@ -799,6 +799,7 @@ body{
     padding: 3%;
     background: var(--cream);
     border: none;
+    border-radius: 10px;
     color: var(--text-color);
     font-family: var(--font1);
     font-weight: 600;
