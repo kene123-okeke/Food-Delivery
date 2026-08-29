@@ -513,7 +513,7 @@ body{
     right: 0;
     height: 100vh;
     min-width: 350px;
-    width: 40vw;
+    width: 30vw;
     background: var(--background-overlay, #1a1a1a);
     background-image: url("../Images/IMG-20260701-WA1473.jpg");
     background-repeat: no-repeat;
@@ -562,21 +562,24 @@ body{
 .cart-additions{
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 8dvh;
     align-items:center;
     justify-content: center;
     padding-top: 3dvw;
-    max-height: 73dvh;
+    min-height: 90%;
     overflow-y: auto;
     z-index: 0;
 }
 
-
-
+.cart-items-container{
+    
+}
 .cart-item{
     display: flex;
     flex-direction: column;
     background-color: #fafaf873;
-    gap: 2dvh;
+    gap: 0.5dvh;
     font-family: var(--font1);
     font-size: 1.1rem;
     font-weight: 400;
@@ -604,7 +607,7 @@ body{
     flex-direction: column;
     padding: 3vh 2vw;
     position: fixed;
-    bottom: 2vh;
+    bottom: 0;
     left: 0; right: 0;
     text-align: center;
     font-size: 1.3rem;
@@ -614,21 +617,26 @@ body{
 .total{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5dvh;
+    margin-bottom: 4dvh;
+    color: var(--price, #398a03);
 }
 .cart-total .total-text{
     font-weight: 700;
+    color: var(--text, #1a1a1a);
 }
 
 .checkout a{
-    border: 1px solid ;
-    padding: 1vh 100px;
+    border: 1px solid var(--red);
+    padding: 1vh 90px;
+    width:100vw;
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
+    margin-top: 2vh;
     margin-bottom: 1vh;
-    background: var(--green);
-    color: var(--text-color);
+    background: var(--cream);
+    color: var(--red);
+    box-shadow: 0 0 10px #1a1a1a;
 }
 /*.method{
     position: absolute;
@@ -871,7 +879,7 @@ body{
 }
 .add-item span{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: var(--green, #398a03);
+    color: var(--price, #398a03);
 }
 
 .base{
@@ -892,12 +900,11 @@ body{
     font-weight: 500;
     color: var(--cream, #ffb870);
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
 .base div .panel-total span{
-    color: var(--green, #55c00d);
+    color: var(--price, #398a03);
 }
 .base div .confirm-btn{
     padding: 1vh 90px;

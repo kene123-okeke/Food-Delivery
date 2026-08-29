@@ -146,13 +146,15 @@ function renderCart(){
     : 'No extras';
 
     cartItemsE1.innerHTML += `
-    <div class="cart-item">
-      <div class="cart-item-info">
-        <strong> ${item.name} (${item.type})</strong>
-        <span class="cart-item-additins">${additionsText}</span>
-      </div>
-      <div class="cart-item-price">₦${item.total.toLocaleString()}</div>
-      <button class="cart-remove-btn" title="Remove" data-index="${index}">✕</button>
+    <div class="cart-items-container">
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <strong> ${item.name} (${item.type})</strong>
+          <span class="cart-item-additins">${additionsText}</span>
+        </div>
+        <div class="cart-item-price">₦${item.total.toLocaleString()}</div>
+        <button class="cart-remove-btn" title="Remove" data-index="${index}">✕</button>
+      </div>;
     </div>`;
   });
 
