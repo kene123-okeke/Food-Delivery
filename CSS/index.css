@@ -73,7 +73,7 @@ body{
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 2vh 10px;
+    padding: 2vh 30px;
     align-items: center;
     justify-content: space-between;
     background-color: var(--red, #990000);

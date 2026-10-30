@@ -59,10 +59,10 @@ body{
     margin: auto;
     position: relative;
     background-color: var(--background-tint);
-    min-width: 40dvw;
-    max-width: 50dvw;
+    min-width: 350px;
+    /* max-width: 10px; */
     max-height:90dvh;
-    padding: 4vh 2vw;
+    padding: 4vh 10px;
     font-family: var(--font1);
     border-radius: 20px;
     border:2px solid var(--red);
@@ -422,7 +422,7 @@ input.invalid{
 }
 @media(max-width:500px){
     .login-card{
-        min-width: 85vw;
+        min-width: 350px;
         /* height: min-content; */
     }
 }
