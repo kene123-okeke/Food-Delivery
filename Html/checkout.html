@@ -8,6 +8,73 @@
     </head>
     </head>
     <body>
+        <div class="checkout-heading"><h2>CHECK-OUT PAGE</h2></div>
+        <div>
+            <p> Please choose how you want your meal</p>
+            <div>
+                <button type="button">Reservations</button>
+                <button type="button">Delivery</button>
+            </div>
+        </div>
 
+        <div class="reservation">
+            <div>
+                <div class="cart-Area">
+                    <div id="checkoutItems"></div>
+                    <div class="checkout-total">
+                        <span>Total</span>
+                        <span id="checkoutTotal">N0</span>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <div class="time">
+                    <form>
+                        <label>Expected Time Of Pick-up
+                        </label>
+                        <input type="time" title="Time">
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="payment-details">
+                    <h3>Payment Details</h3>
+                    <span><p>Bank:</p><p>Moniepoint</p></span>
+                    <span><p>Account Name</p><p>Vivits Treat and Chops</p></span>
+                    <span><p>Account Number</p><p>8037856431</p></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="delivery">
+            <div>
+                <div class="cart-Area">
+
+                </div>
+            </div>
+            <div>
+                <div class="Location">
+                    <form>
+                        <label>Address for Delivery</label>
+                        <input type="search" title="Address">
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="payment-details">
+                    <h3>Payment Details</h3>
+                    <span><p>Bank:</p><p>Moniepoint</p></span>
+                    <span><p>Account Name</p><p>Vivits Treat and Chops</p></span>
+                    <span><p>Account Number</p><p>8037856431</p></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form>
+                <button type="submit" title="Place Order" onclick="localStorage.removeItem('cart')">Place Order</button>
+            </form>
+        </div>
+        <script src="../JS/checkout.js"></script>
     </body>
 </html>

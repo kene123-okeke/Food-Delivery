@@ -4,7 +4,15 @@ const cartBtn = document.getElementById('cart-btn');
 const shopBtn = document.getElementById('shop-cart');
 
 let cart = [];
+try {
+  cart = JSON.parse(localStorage.getItem('cart'))||[];
+  }catch (e){
+    cart = [];
+  }
 
+function saveCart(){
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 document.querySelectorAll('.food-card').forEach(card=>{
   const variants = JSON.parse(card.dataset.variants);
   const pricesContainer = card.querySelector('.prices');
@@ -154,11 +162,12 @@ function renderCart(){
         </div>
         <div class="cart-item-price">₦${item.total.toLocaleString()}</div>
         <button class="cart-remove-btn" title="Remove" data-index="${index}">✕</button>
-      </div>;
+      </div>
     </div>`;
   });
 
   document.getElementById('cartTotal').textContent = 'N' + grandTotal.toLocaleString();
+  saveCart();
 }
 
 
