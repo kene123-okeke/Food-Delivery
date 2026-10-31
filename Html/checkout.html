@@ -21,66 +21,80 @@
                     Review you order, tell us your location and pay by transfer
                 </p>
             </div>
-        
-            <div class="checkout-method">
-                <p> Please choose how you want your meal</p>
-                <div class="method-switch">
-                    <button type="button">Reservations</button>
-                    <button type="button">Delivery</button>
-                </div>
-            </div>
-
-            <div class="reservation">
-                <div>
-                    <div class="cart-Area">
-                        <div id="checkoutItems"></div>
-                        <div class="checkout-total">
-                            <span>Total</span>
-                            <span id="checkoutTotal">N0</span>
+            
+            <div class="container-row">
+                <div class="column1">
+                    <div class="checkout-method">
+                        <p> Please choose how you want your meal</p>
+                        <div class="method-switch">
+                            <button type="button" class="reserve" id="reserved">Reservations</button>
+                            <button type="button" class="deliver" id="delivered">Delivery</button>
                         </div>
-
                     </div>
-                </div>
-                <div>
-                    <div class="time">
-                        <form>
-                            <label>Expected Time Of Pick-up
-                            </label>
-                            <input type="time" title="Time">
+
+                    <div class="reservation" id="reserve">
+                        <div class="user-input">
+                            <form>
+                                <label class="time">Expected Time Of Pick-up
+                                </label>
+                                <input type="time" title="Time" class="time" required>
+                                <label class="note">Note for the kitchen<span>(Optional)</span></label>
+                                <textarea class="note" placeholder="Your Specifications for your order..." ></textarea>
+                            </form>
+                        </div>
+                    </div>
+                        
+                    <div class="delivery" id="deliver">
+                        <form class="user-input">
+                            <div>
+                                <span>
+                                    <label class="fullname">Fullname</label>
+                                    <input type="text" placeholder="Your Fullname" title="Fullname" class="name-field" required>
+                                </span>
+                                <span>    
+                                    <label class="phone-contact">Phone number</label>
+                                    <input type="tel" maxlength="11" class="number-field">
+                                </span>
+                            </div>
+                            <span class="entry">
+                                <label class="location">Address for Delivery</label>
+                                <input class="location-field" type="search" placeholder="Any notable landmark" title="Address">
+                            </span>   
+                            <span class="entry">
+                                <span class="delivery-note-line"><label class="delivery-note">Note for the kitchen  <span class="optional">(Optional)</span></label></span>
+                                <textarea class="note-field" placeholder="Your Specifications for your order..." ></textarea>
+                            </span> 
                         </form>
+                    
+                    
                     </div>
-                </div>
-                <div>
-                    <div class="payment-details">
-                        <h3>Payment Details</h3>
-                        <span><p>Bank:</p><p>Moniepoint</p></span>
-                        <span><p>Account Name</p><p>Vivits Treat and Chops</p></span>
-                        <span><p>Account Number</p><p>8037856431</p></span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="delivery">
-                <div>
-                    <div class="cart-Area">
-
-                    </div>
-                </div>
-                <div>
-                    <div class="Location">
-                        <form>
-                            <label>Address for Delivery</label>
-                            <input type="search" title="Address">
-                        </form>
-                    </div>
-                </div>
-                <div>
                     <div class="payment-details">
-                        <h3>Payment Details</h3>
-                        <span><p>Bank:</p><p>Moniepoint</p></span>
-                        <span><p>Account Name</p><p>Vivits Treat and Chops</p></span>
-                        <span><p>Account Number</p><p>8037856431</p></span>
+                            <h3>Payment Details</h3>
+                            <span><strong>Bank:</strong><p>Moniepoint</p></span>
+                            <span><strong>Account Name:</strong><p>Vivits Treat and Chops</p></span>
+                            <span><strong>Account Number:</strong><p>8037856431</p></span>
                     </div>
+                    
+                </div>
+                
+                
+                <div class="column2">
+                    <div>
+                        <div class="cart-Area">
+                            <h3>Your Cart <i class="fa fa-shopping-cart"></i></h3>
+                            <div id="checkoutItems">
+                            </div>
+                            <div class="checkout-total">
+                                <span>Total</span>
+                                <span id="checkoutTotal">N0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                
+                    
                 </div>
             </div>
             <div>

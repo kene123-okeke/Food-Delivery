@@ -53,6 +53,12 @@
 .checkout-heading h2{
     font-family: var(--font1);
     color: var(--red);
+    font-weight: 600;
+}
+
+.checkout-heading p{
+    font-family: var(--font1);
+    color: var(--text-color);
     font-weight: 500;
 }
 .container{
@@ -64,20 +70,37 @@
     width: 90%;
 }
 
+.container-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.column1{
+    width: 60%;
+}
+
+.column2{
+    display: flex;
+    flex-direction: column;
+    width: 40%
+}
 .checkout-method{
     display:flex;
     flex-direction: column;
-    width:100%;
+    width:95%;
     align-items: center;
     justify-content: center;
     background-color: #ffb87073;
     padding:2dvh 1dvw;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-bottom: 5dvh;
 }
 
 .checkout-method p{
     font-family: var(--font1);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 1dvh;
 }
 
@@ -91,12 +114,203 @@
 }
 .checkout-method .method-switch button{
     width:45%;
-    padding:1dvh 2dvw;
+    padding:1dvh 1%;
     border: 2px solid var(--red);
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: var(--background-tint);
     font-size: 1.1rem;
     font-family: var(--font1);
     font-weight:500;
     color:var(--dark-red);
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.checkout-method .method-switch button:hover{
+    background-color:var(--red);
+    color:var(--background-tint);
+}
+.reserve.current, .deliver.current{
+    background-color:var(--red);
+    color:var(--background-tint);
+}
+
+.cart-Area{
+    background-color: #ffb87073;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    padding: 3dvh 4dvw;
+    border-radius: 10px;
+    font-family: var(--font1);
+    margin-bottom: 3dvh;
+}
+
+.cart-Area h3{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1dvh;
+    color: #990000;
+}
+
+.cart-item{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 2dvh;
+    padding-bottom: 1dvh;
+    border-bottom: 2px solid var(--red);
+}
+
+.cart-item-info{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.cart-item-additins{
+    width:70%;
+}
+
+.checkout-total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+.reservation{
+    display: block;
+    width: 95%;
+    background-color: #ffb87073;
+    padding: 2dvh;
+    border-radius: 10px;
+    margin-bottom: 5dvh;
+}
+
+.reservation .user-input form{
+    font-family: var(--font1);
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation .user-input form label.time{
+    width:100%;
+    margin-bottom: 1dvh;
+    font-family: var(--font1);
+    font-weight: 500;
+}
+
+.reservation .user-input form input.time{
+    width:110px;
+    margin-bottom: 2dvh;
+    padding: 1dvh 1dvw;
+    border-radius: 10px;
+    border: 1px solid #6b0000;
+}
+
+.reservation .user-input form label.note{
+    width:100%;
+    margin-bottom: 1dvh;
+    font-family: var(--font1);
+    font-weight: 500;
+}
+
+.reservation .user-input form label.note span{
+    font-weight: 300;
+}
+
+.reservation .user-input form textarea.note{
+    width:100%;
+    height: 15dvh;
+    resize: none;
+    border-radius: 10px;
+    padding: 1dvh;
+}
+.delivery{
+    display: block;
+    width: 95%;
+    background-color: #ffb87073;
+    padding: 2dvh;
+    border-radius: 10px;
+    margin-bottom: 5dvh;
+}
+
+.delivery .user-input div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.delivery .user-input div span{
+    width: 48%;
+}
+
+.delivery .user-input div span, .delivery .user-input span{
+    display: flex;
+    flex-direction: column;
+}
+
+.fullname, .phone-contact, .location, .delivery-note{
+    font-size: 1.05rem;
+    font-family: var(--font1);
+    font-weight: 500;
+    margin-bottom: 0.8dvh;
+    margin-left: 1dvw;
+    white-space: nowrap;
+}
+
+.entry .delivery-note{
+    display: flex;
+}
+.delivery-note span{
+    font-weight: 300;
+}
+.name-field, .number-field, .location-field{
+    font-size: 0.9rem;
+    padding: 0.8dvh 1dvw;
+    border: 1px solid #6b0000;
+    margin-bottom: 1.5dvh;
+    border-radius: 5px;
+}
+
+.note-field{
+    width:100%;
+    height: 15dvh;
+    resize: none;
+    border-radius: 10px;
+    padding: 1dvh;
+}
+
+.payment-details{
+    display: block;
+    padding: 1dvh 2dvw;
+    background-color: #ffb87073;
+    border-radius: 10px;
+    width: 95%;
+}
+
+.payment-details h3{
+    text-align: center;
+    font-family: var(--font1);
+    font-size: 1.4rem;
+    color: var(--red);
+}
+
+.payment-details span{
+    display: flex;
+    justify-content: space-between;
+    margin:2dvh;
+}
+
+.payment-details span strong{
+    font-size: 1.15rem;
+    font-family: var(--font1);
+    color: var(--text-color);
+}
+
+.payment-details span p{
+    font-size: 1.05rem;
+    font-family:monospace;
+    font-weight: 500;
+    color: var(--text-color)
 }
