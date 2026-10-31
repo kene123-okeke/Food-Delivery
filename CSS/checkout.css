@@ -127,13 +127,14 @@
 }
 
 .checkout-method .method-switch button:hover{
-    background-color:var(--red);
-    color:var(--background-tint);
+    background-color:#99000010;
+    color:var(--red);
 }
 .checkout-method .method-switch button.reserve.current,
 .checkout-method .method-switch button.deliver.current{
     background-color:var(--red);
     color:var(--background-tint);
+    border: 2px solid var(--dark-red);
 }
 
 .cart-Area{
@@ -288,6 +289,7 @@
     background-color: #ffb87073;
     border-radius: 10px;
     width: 95%;
+    margin-bottom: 5dvh;
 }
 
 .payment-details h3{
@@ -314,4 +316,24 @@
     font-family:monospace;
     font-weight: 500;
     color: var(--text-color)
+}
+
+.order-btn form button{
+    width: 95%;
+    padding: 1.5dvh;
+    border-radius: 10px;
+    border: 1px solid ;
+    color: var(--light-shadow);
+    background-color: var(--red);
+    font-family: var(--font1);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.order-btn form button:hover{
+    color: var(--red);
+    background-color: var(--background-tint);
+    border: 2px solid var(--red);
 }
