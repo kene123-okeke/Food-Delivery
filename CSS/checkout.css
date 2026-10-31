@@ -130,7 +130,8 @@
     background-color:var(--red);
     color:var(--background-tint);
 }
-.reserve.current, .deliver.current{
+.checkout-method .method-switch button.reserve.current,
+.checkout-method .method-switch button.deliver.current{
     background-color:var(--red);
     color:var(--background-tint);
 }
