@@ -41,8 +41,22 @@
 }
 
 .navbar a{
-    color: var(--text-color);
+    color: var(--cream);
     cursor: pointer;
+    border: 2px solid var(--cream);
+    padding:1dvh 2dvw;
+    border-radius: 10px;
+    font-family: var(--font1);
+    text-decoration: none;
+    
+}
+
+.navbar a:hover{
+    background-color: var(--cream);
+    color: var(--red);
+    transition: ease-in-out 0.3s;
+    box-shadow: inset 0 0 5px var(--red);
+    border: 2px solid var(--dark-red);
 }
 
 .checkout-heading{
@@ -71,22 +85,27 @@
 }
 
 .container-row{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto 1fr;
+    align-items: start;
     width: 100%;
-    justify-content: space-between;
 }
 
 .column1{
-    width: 60%;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 100%;
     order: 1;
 }
 
 .column2{
+    grid-column: 2;
+    grid-row: 1;
     display: flex;
     flex-direction: column;
-    width: 40%;
-    order:2;
+    width: 100%;
+    order: 2;
     height: fit-content;
 }
 
@@ -333,6 +352,8 @@
 }
 
 .order-btn{
+    grid-column: 2;
+    grid-row: 2;
     order: 3;
     margin-bottom: 5dvh;
 }
@@ -356,7 +377,13 @@
     border: 2px solid var(--red);
 }
 
-@media (max-width:450px) {    
+@media(max-width:450px) {   
+    .navbar a{
+        border-radius:50%;
+    }
+    .navbar a strong{
+        display: none;
+    }
     .container-row{
         display: flex;
         flex-direction: column;
@@ -384,7 +411,10 @@
     .payment-details{
         width: 100%;
     }
-    
+    .order-btn{
+        order: 3;
+        width: 100%;
+    }
     .order-btn form button{
         order: 3;
         width: 100%;
