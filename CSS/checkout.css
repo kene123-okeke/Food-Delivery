@@ -89,6 +89,7 @@
     order:2;
     height: fit-content;
 }
+
 .checkout-method{
     display:flex;
     flex-direction: column;
@@ -327,7 +328,7 @@
     font-size: 1.05rem;
     font-family:monospace;
     font-weight: 500;
-    color: var(--text-color)
+    color: var(--text-color);
     white-space: nowrap;
 }
 
