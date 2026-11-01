@@ -79,12 +79,15 @@
 
 .column1{
     width: 60%;
+    order: 1;
 }
 
 .column2{
     display: flex;
     flex-direction: column;
-    width: 40%
+    width: 40%;
+    order:2;
+    height: fit-content;
 }
 .checkout-method{
     display:flex;
@@ -95,7 +98,7 @@
     background-color: #ffb87073;
     padding:2dvh 1dvw;
     border-radius: 10px;
-    margin-bottom: 5dvh;
+    margin-bottom: 3dvh;
 }
 
 .checkout-method p{
@@ -185,7 +188,7 @@
     background-color: #ffb87073;
     padding: 2dvh;
     border-radius: 10px;
-    margin-bottom: 5dvh;
+    margin-bottom: 3dvh;
 }
 
 .reservation .user-input form{
@@ -227,13 +230,17 @@
     border-radius: 10px;
     padding: 1dvh;
 }
+
+.note:focus, .time:focus{
+    outline: 1px solid var(--red);
+}
 .delivery{
     display: block;
     width: 95%;
     background-color: #ffb87073;
     padding: 2dvh;
     border-radius: 10px;
-    margin-bottom: 5dvh;
+    margin-bottom: 3dvh;
 }
 
 .delivery .user-input div{
@@ -281,8 +288,13 @@
     resize: none;
     border-radius: 10px;
     padding: 1dvh;
+    font-family: var(--font1);
+    color: var(--text-color);
 }
 
+.note-field:focus, .name-field:focus, .number-field:focus, .location-field:focus{
+    outline: 1px solid var(--red)
+}
 .payment-details{
     display: block;
     padding: 1dvh 2dvw;
@@ -318,6 +330,10 @@
     color: var(--text-color)
 }
 
+.order-btn{
+    order: 3;
+    margin-bottom: 5dvh;
+}
 .order-btn form button{
     width: 95%;
     padding: 1.5dvh;
@@ -336,4 +352,19 @@
     color: var(--red);
     background-color: var(--background-tint);
     border: 2px solid var(--red);
+}
+
+@media (max-width:450px) {    
+    .container-row{
+        display: flex;
+        flex-direction: column;
+    }
+    .column1{
+        order: 2;
+        width: 100%;
+    }
+    .column2{
+        order:1;
+        width: 100%;
+    }
 }
