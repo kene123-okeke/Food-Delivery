@@ -328,6 +328,7 @@
     font-family:monospace;
     font-weight: 500;
     color: var(--text-color)
+    white-space: nowrap;
 }
 
 .order-btn{
@@ -361,6 +362,30 @@
     }
     .column1{
         order: 2;
+        width: 100%;
+    }
+    .checkout-method{
+        width:100%;
+    }
+    
+    .cart-Area{
+        width: 100%;
+    }
+    
+    .reservation{
+        width:100%;
+    }
+    
+    .delivery{
+        width: 100%;
+    }
+    
+    .payment-details{
+        width: 100%;
+    }
+    
+    .order-btn form button{
+        order: 3;
         width: 100%;
     }
     .column2{
