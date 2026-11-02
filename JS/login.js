@@ -115,3 +115,7 @@ signupForm.addEventListener("submit", (e) =>{
         }, 2000)
     }, 2000)
 })
+
+window.addEventListener('pageshow', () => {
+    pageLoader.style.display = 'none'
+});

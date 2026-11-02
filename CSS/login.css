@@ -19,7 +19,9 @@
     padding:0;
     box-sizing:border-box;
 }
-
+head link .icon{
+    border-radius: 50%;
+}
 body{
     display: flex;
     flex-direction: row;

@@ -289,13 +289,13 @@ body{
     font-weight: 500;
     font-size: 1.1rem;
     box-shadow: 0px 0px 20px #ffb870;
- }
+}
 
- .body-block .menu-btn:hover{
+.body-block .menu-btn:hover{
     background: var(--red, #990000);
     color: var(--cream, #ffb870);
     border: 2px solid #ffb870;
- }
+}
 
 
 /* The end of the head block with yellow background */
@@ -513,7 +513,7 @@ body{
 /* Beginning of the Manual Section */
 .manual{
     position: relative;
-    background: var(--background);
+    background: var(--background-tint);
     padding:1vw;
     z-index: -1;
 }
