@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     delivery.forEach(btn => btn.addEventListener('click', (b) => setMode('delivery')));
     reserve.forEach(btn => btn.addEventListener('click', () => setMode('reservation')));
 
-    const WHATSAPP_NUMBER = '2348037856431';   // vendor number: 08012345678 becomes 2348012345678
+    const WHATSAPP_NUMBER = '+2348037856431';   // vendor number: 08012345678 becomes 2348012345678
 
     const placeOrderBtn = document.getElementById('placeOrderBtn');
     const orderError = document.getElementById('orderError');
@@ -117,18 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const orderId = 'VT' + Date.now().toString().slice(-6);
         const total = subtotal + currentFee;
-
-        const message =
-    `*New order ${orderId}*
-
-    *Items*
-    ${itemsText}
-    ${isDelivery ? 'Delivery fee' : 'Reservation fee'}: ₦${currentFee}
-    *Total: ₦${total.toLocaleString()}*
-
-    ${details}
-
-    I will pay by bank transfer and send my receipt here.`;
+    const message = [
+    `*New order ${orderId}*`,
+    '',
+    '*Items*',
+    itemsText.trimEnd(),
+    '',
+    `${isDelivery ? 'Delivery fee' : 'Reservation fee'}: ₦${currentFee}`,
+    `*Total: ₦${total.toLocaleString()}*`,
+    '',
+    details,
+    '',
+    'I will pay by bank transfer and send my receipt here.'
+    ].join('\n');
 
         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
