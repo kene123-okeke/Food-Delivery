@@ -124,7 +124,7 @@ function updateSubtotal(basePrice){
   const checkedBoxes = container.querySelectorAll('input[type="checkbox"]:checked');
   let total = basePrice;
   checkedBoxes.forEach(box => total += Number(box.dataset.price));
-  document.getElementById('panelTotal').textContent = 'N' + total.toLocaleString();
+  document.getElementById('panelTotal').textContent = '₦' + total.toLocaleString();
 }
 
 function addToCart(name, type, basePrice, additions){
@@ -166,7 +166,7 @@ function renderCart(){
     </div>`;
   });
 
-  document.getElementById('cartTotal').textContent = 'N' + grandTotal.toLocaleString();
+  document.getElementById('cartTotal').textContent = '₦' + grandTotal.toLocaleString();
   saveCart();
 }
 
@@ -251,3 +251,5 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.5});
 sections.forEach(section => observer.observe(section));
+
+renderCart();

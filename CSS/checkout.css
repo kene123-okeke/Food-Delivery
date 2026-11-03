@@ -389,6 +389,14 @@ body{
     border: 2px solid var(--red);
 }
 
+.order-error{
+    width: 95%;
+    margin-top: 1dvh;
+    font-family: var(--font1);
+    font-size: 0.9rem;
+    color: #b3341f;
+}
+
 @media(max-width:450px) {   
     .navbar a{
         padding: 10px;

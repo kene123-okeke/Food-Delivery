@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="../CSS/checkout.css">
         <link rel="stylesheet" href="../fontawesome-free-7.2.0-web/css/all.min.css">
     </head>
-    </head>
     <body>
         <div class="navbar"><h3>
             🍔<span> Vivits</span> Treats and Chops
@@ -86,7 +85,7 @@
                             </div>
                             <div class="checkout-total">
                                 <span>Total</span>
-                                <span id="checkoutTotal">N0</span>
+                                <span id="checkoutTotal">₦0</span>
                             </div>
                         </div>
                     </div>
@@ -96,8 +95,9 @@
                 </div>
                 <div class="order-btn">
                         <form>
-                            <button type="submit" title="Place Order" onclick="localStorage.removeItem('cart')">Place Order</button>
+                            <button type="submit" title="Place Order" onclick="localStorage.removeItem('cart')" id="placeOrderBtn">Place Order</button>
                         </form>
+                        <p class="order-error" id="orderError"></p>
                     </div>  
             </div>
             
