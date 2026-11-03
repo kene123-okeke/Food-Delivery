@@ -29,7 +29,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 2dvh 2dvw;
+    padding: 10px 2dvw;
     background-color: var(--red);
 }
 
@@ -49,7 +49,7 @@ body{
     color: var(--cream);
     cursor: pointer;
     border: 2px solid var(--cream);
-    padding:1dvh 2dvw;
+    padding:10px 2dvw;
     border-radius: 10px;
     font-family: var(--font1);
     text-decoration: none;
@@ -145,7 +145,7 @@ body{
 }
 .checkout-method .method-switch button{
     width:45%;
-    padding:1dvh 1%;
+    padding:10px 1%;
     border: 2px solid var(--red);
     border-radius: 15px;
     background-color: var(--background-tint);
@@ -229,7 +229,7 @@ body{
     flex-direction: column;
 }
 
-.reservation .user-input form label.time{
+.reservation .user-input form label.time, .reservation .user-input form label.fullname{
     width:100%;
     margin-bottom: 1dvh;
     font-family: var(--font1);
@@ -239,7 +239,7 @@ body{
 .reservation .user-input form input.time{
     width:110px;
     margin-bottom: 2dvh;
-    padding: 1dvh 1dvw;
+    padding: 8px 1dvw;
     border-radius: 10px;
     border: 1px solid #6b0000;
 }
@@ -306,9 +306,9 @@ body{
 .delivery-note span{
     font-weight: 300;
 }
-.name-field, .number-field, .location-field{
-    font-size: 0.9rem;
-    padding: 0.8dvh 1dvw;
+.name-field, .number-field, .location-field, .fullname-field{
+    font-size: 0.95rem;
+    padding: 8px 1dvw;
     border: 1px solid #6b0000;
     margin-bottom: 1.5dvh;
     border-radius: 5px;
@@ -371,7 +371,7 @@ body{
 }
 .order-btn form button{
     width: 95%;
-    padding: 1.5dvh;
+    padding: 15px;
     border-radius: 10px;
     border: 1px solid ;
     color: var(--light-shadow);
@@ -395,6 +395,79 @@ body{
     font-family: var(--font1);
     font-size: 0.9rem;
     color: #b3341f;
+}
+
+.confirm-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    padding: 2dvh 4dvw;
+    z-index: 1000;
+}
+
+.confirm-overlay.show{
+    display: flex;
+}
+
+.confirm-pane{
+    width: 100%;
+    max-width: 380px;
+    max-height: 90dvh;
+    overflow-y: auto;
+    padding: 4dvh 24px;
+    background-color: var(--background-tint);
+    border: 2px solid var(--red);
+    border-radius: 15px;
+    text-align: center;
+    font-family: var(--font1);
+    color: var(--text-color);
+}
+
+.confirm-icon{
+    font-size: 3rem;
+    color: var(--green);
+}
+
+.confirm-pane h3{
+    color: var(--red);
+    font-size: 1.5rem;
+    margin-bottom: 1dvh;
+}
+
+.confirm-pane p{
+    margin-bottom: 1dvh;
+}
+
+.confirm-summary{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffb87073;
+    padding: 1.5dvh 16px;
+    border-radius: 10px;
+    margin: 2dvh 0;
+}
+
+.confirm-wa,
+.confirm-menu{
+    display: block;
+    padding: 1.5dvh;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5dvh;
+}
+
+.confirm-wa{
+    background-color: var(--red);
+    color: var(--light-shadow);
+}
+
+.confirm-menu{
+    border: 2px solid var(--red);
+    color: var(--red);
 }
 
 @media(max-width:450px) {   

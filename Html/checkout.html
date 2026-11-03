@@ -33,6 +33,8 @@
                     <div class="reservation" id="reserve">
                         <div class="user-input">
                             <form>
+                                <label class="fullname">Fullname</label>
+                                <input type="text" class="fullname-field" placeholder="Your Fullname" title="Fullname">
                                 <label class="time">Expected Time Of Pick-up
                                 </label>
                                 <input type="time" title="Time" class="time" required>
@@ -102,6 +104,20 @@
             </div>
             
         </div>
+        <div class="confirm-overlay" id="confirmOverlay">
+    <div class="confirm-pane" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="confirm-icon"><i class="fa fa-circle-check"></i></div>
+        <h3 id="confirmTitle">Order Ready</h3>
+        <p>Order <strong id="confirmOrderId"></strong></p>
+        <p>Your order is open in WhatsApp. Tap <strong>Send</strong> there to finish, and we'll reply to confirm.</p>
+        <div class="confirm-summary">
+            <span>Total</span>
+            <strong id="confirmTotal"></strong>
+        </div>
+        <a class="confirm-wa" id="confirmWhatsApp" href="#" target="_blank" rel="noopener">Open WhatsApp again</a>
+        <a class="confirm-menu" href="menu.html">Back to menu</a>
+    </div>
+</div>
         <script src="../JS/checkout.js"></script>
     </body>
 </html>

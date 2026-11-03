@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCheckout(feeLabel, fee){
         if (cart.length === 0){
-            itemE1.innerHTML = '<p> Your cart is empty.<p>';
+            itemE1.innerHTML = '<p> Your cart is empty.</p>';
             document.getElementById('checkoutTotal').textContent = '₦0';
             return
         } 
@@ -94,14 +94,19 @@ document.addEventListener('DOMContentLoaded', () => {
             details = `*Method:* Delivery\n*Name:* ${name}\n*Phone:* ${phone}\n*Address:* ${address}`;
             if (note) details += `\n*Note:* ${note}`;
         } else {
+            const fullName = document.querySelector('.fullname-field').value.trim()
             const time = document.querySelector('input.time').value;
             const note = document.querySelector('textarea.note').value.trim();
-
+    
+            if (!fullName){
+                orderError.textContent = 'Please enter your fullname for identification.';
+                return;
+            }
             if (!time){
                 orderError.textContent = 'Please choose your expected pick-up time.';
                 return;
             }
-            details = `*Method:* Reservation\n*Pick-up time:* ${time}`;
+            details = `*Method:* Reservation\n*Fullname:* ${fullName}\n*Pick-up time:* ${time}`;
             if (note) details += `\n*Note:* ${note}`;
         }
 
@@ -136,10 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.removeItem('cart');
         cart.length = 0;
-        itemE1.innerHTML = `<p>Order ${orderId} is ready. Tap Send in WhatsApp to finish. <a href="${url}" target="_blank">Open WhatsApp again</a></p>`;
-        document.getElementById('checkoutTotal').textContent = '₦0';
+        setMode(currentMode); // redraws the list as empty
         placeOrderBtn.disabled = true;
-    });
+        
+        document.getElementById('confirmOrderId').textContent = orderId;
+        document.getElementById('confirmTotal').textContent = '₦' + total.toLocaleString();
+        document.getElementById('confirmWhatsApp').href = url;
+        document.getElementById('confirmOverlay').classList.add('show');
+        document.getElementById('confirmWhatsApp').focus();
+            });
+            
+            const confirmOverlay = document.getElementById('confirmOverlay');
+confirmOverlay.addEventListener('click', (e) => {
+    if (e.target === confirmOverlay) confirmOverlay.classList.remove('show');
+});
     setMode('reservation');
 
     
