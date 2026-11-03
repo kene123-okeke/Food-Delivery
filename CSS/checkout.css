@@ -20,9 +20,12 @@
 }
 
 body{
-    background-image:url('../Images/IMG-20260701-WA1473.jpg');
-    background-color: var(--background-overlay);
+    /* background-image:url('../Images/IMG-20260701-WA1473.jpg'); */
+    background-color: var(--background-tint);
     background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
 }
 .navbar{
     display: flex;
