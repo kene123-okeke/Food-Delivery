@@ -1,3 +1,9 @@
+async function requireLogin() {
+    const res = await fetch('/api/auth/me', { credentials: 'include' });
+    if (!res.ok) window.location.href = 'login.html';
+}
+requireLogin();
+
 document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const itemE1 = document.getElementById('checkoutItems');

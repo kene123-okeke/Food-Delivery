@@ -20,8 +20,38 @@
                     
                 </form>
                 <button type="button" class="search-icon" title="Search"><i class="fa fa-search"></i><p>search</p></button>
-                <div class="login-btn" id="top-logout-btn">
-                    <button type="button"  title="Log out"><i class="fa fa-sign-out-alt"></i> <p>Log Out</p></button>
+                            <div class="profile-menu" id="profileMenu">
+                    <button type="button" class="profile-trigger" id="profileTrigger" title="Account">
+                        <img id="navAvatar" src="" alt="Profile">
+                        <i class="fa fa-chevron-down"></i>
+                    </button>
+
+                    <div class="profile-dropdown" id="profileDropdown">
+                        <div class="profile-header">
+                            <div class="avatar-wrap">
+                                <img id="menuAvatar" src="" alt="Profile">
+                                <label class="avatar-edit" for="avatarInput" title="Change photo">
+                                    <i class="fa fa-camera"></i>
+                                    <input type="file" id="avatarInput" accept="image/*" hidden>
+                                </label>
+                            </div>
+                            <div>
+                                <strong id="profileName">Account</strong>
+                                <small id="profileEmail">—</small>
+                            </div>
+                        </div>
+                        <hr>
+                        <button type="button" class="profile-link" id="openNotificationsBtn">
+                            <i class="fa fa-bell"></i> Notifications
+                            <span class="notif-count" id="notifCount" style="display:none;">0</span>
+                        </button>
+                        <a href="orders.html" class="profile-link"><i class="fa fa-receipt"></i> My Orders</a>
+                        <button type="button" class="profile-link" id="openPasswordBtn"><i class="fa fa-lock"></i> Change Password</button>
+                        <hr>
+                        <a href="#" class="profile-link" id="changeAvatarBtn"><i class="fa fa-image"></i> Change Photo</a>
+                        <a href="#" class="profile-link danger" id="deleteAccountBtn"><i class="fa fa-trash"></i> Delete Account</a>
+                        <button type="button" class="profile-link danger" id="logoutBtn"><i class="fa fa-sign-out-alt"></i> Log Out</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,11 +128,46 @@
             <h1 class="logout-icon">🥺🥺</h1>
             <p> do you want to log out?</p>
             <div class="logout-btn">
-                <a href="login.html">Yes</a>
+                <a href="#" id="confirmLogoutBtn">Yes</a>
                 <button type="button" class="cancel-btn">No</button>
             </div>
         </div>
 
+        <!-- ─── Notifications Modal ──────────────────────────────── -->
+<div class="logout-box notif-modal" id="notifBox" style="height: auto; max-width: 420px; padding: 0;">
+    <div class="notif-head">
+        <h3><i class="fa fa-bell"></i> Notifications</h3>
+        <button type="button" id="closeNotifBtn">✕</button>
+    </div>
+    <div class="notif-list" id="notifList">
+        <p class="notif-empty">No notifications yet.</p>
+    </div>
+    <button type="button" class="notif-mark-all" id="markAllReadBtn">
+        <i class="fa fa-check-double"></i> Mark all as read
+    </button>
+</div>
+
+<!-- ─── Change Password Modal ───────────────────────────── -->
+<div class="logout-box" id="password-box" style="height: auto; max-width: 400px; padding: 20px;">
+    <h2 style="color:var(--red);text-align:center;margin-bottom:14px;">Change Password</h2>
+
+    <label class="pw-label">Current password</label>
+    <input type="password" id="currentPassword" placeholder="Your current password">
+
+    <label class="pw-label">New password</label>
+    <input type="password" id="newPassword" placeholder="At least 8 characters" minlength="8">
+
+    <label class="pw-label">Confirm new password</label>
+    <input type="password" id="confirmPassword" placeholder="Repeat new password" minlength="8">
+
+    <p class="order-error" id="passwordError" style="min-height:18px; color:#b3341f; font-size:0.85rem; margin-bottom:8px;"></p>
+    <p class="order-success" id="passwordSuccess" style="color:#06a060;font-weight:600;min-height:18px; font-size:0.85rem;"></p>
+
+    <div class="logout-btn">
+        <button type="button" class="cancel-btn" id="cancelPassword">Cancel</button>
+        <button type="button" id="submitPassword" style="background:var(--red);color:#fff;border:1px solid var(--red);padding:7px 22px;border-radius:10px;font-weight:600;cursor:pointer;">Update</button>
+    </div>
+</div>
         <div class="overlay" id="overlay"></div>
         
         <div class="footer">

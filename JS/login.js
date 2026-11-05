@@ -76,45 +76,71 @@ emailInput.addEventListener('input', () => {
 const loginForm = document.getElementById('loginForm');
 const loginError = document.getElementById('loginError');
 const pageLoader = document.getElementById('pageloader');
+const signupError = document.getElementById('signupError')
 
-loginForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    loginError.classList.remove('show');
 
-    const enteredEmail = loginForm.querySelector('input[type="email"]').value.trim();
+    const enteredEmail    = loginForm.querySelector('input[type="email"]').value.trim();
     const enteredPassword = loginForm.querySelector('input[type="password"]').value;
 
+    try {
+        const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: enteredEmail, password: enteredPassword })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.message || 'Login failed.');
 
-    const correctEmail = "test@vivits.com";
-    const correctpassword = "password123";
-
-    if (enteredEmail === correctEmail && enteredPassword === correctpassword){
-        loginError.classList.remove('show');
         loginMessage.style.display = "block";
         setTimeout(() => {
             loginMessage.style.display = "none";
             pageLoader.style.display = "flex";
-            setTimeout(() => {
-                window.location.href = loginForm.action;
-            }, 2000)
-        }, 2000)
-
-    }else{
+            setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+        }, 2000);
+    } catch (err) {
+        loginError.textContent = err.message;
         loginError.classList.add('show');
     }
-})
+});
 
 const signupForm = document.getElementById('signupform');
-signupForm.addEventListener("submit", (e) =>{
+signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    signupMessage.style.display = "block";
-    setTimeout(() =>{
-        signupMessage.style.display = "none";
-        pageLoader.style.display = "flex";
+    signupError.classList.remove('show');
+
+    const inputs = signupForm.querySelectorAll('input');
+    const payload = {
+        fullName: inputs[0].value.trim(),
+        email:    inputs[1].value.trim(),
+        phone:    inputs[2].value.trim(),
+        password: inputs[3].value
+    };
+
+    try {
+        const res = await fetch('/api/auth/signup', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.message || 'Signup failed.');
+
+        signupMessage.style.display = "block";
         setTimeout(() => {
-            window.location.href = signupForm.action;
-        }, 2000)
-    }, 2000)
-})
+            signupMessage.style.display = "none";
+            pageLoader.style.display = "flex";
+            setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+        }, 2000);
+    } catch (err) {
+        signupError.textContent = err.message;
+        signupError.classList.add('show');
+    }
+});
 
 window.addEventListener('pageshow', () => {
     pageLoader.style.display = 'none'

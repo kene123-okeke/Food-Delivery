@@ -1,3 +1,9 @@
+async function requireLogin() {
+  const res = await fetch('/api/auth/me', { credentials: 'include' });
+  if (!res.ok) window.location.href = 'login.html';
+}
+requireLogin();
+
 const panel = document.getElementById('sidePanel');
 const overlay = document.getElementById('overlay');
 const cartBtn = document.getElementById('cart-btn');
